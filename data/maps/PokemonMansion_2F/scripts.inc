@@ -1,0 +1,66 @@
+PokemonMansion_2F_MapScripts::
+	map_script MAP_SCRIPT_ON_LOAD, PokemonMansion_2F_OnLoad
+	.byte 0
+
+PokemonMansion_2F_OnLoad::
+	call_if_set FLAG_POKEMON_MANSION_SWITCH_STATE, PokemonMansion_EventScript_PressSwitch_2F
+	call_if_unset SHOWED_OAK_COMPLETE_DEX, PokemonMansion_2F_Clear_Oak
+	end
+
+PokemonMansion_2F_Clear_Oak::
+	setflag FLAG_HIDE_OAK_MANSION
+	setflag FLAG_HIDE_MEW
+	return
+	end
+
+PokemonMansion_2F_EventScript_ProfOak::
+	lock
+	faceplayer
+	goto_if_set FLAG_HIDE_OAK_MANSION, PokemonMansion_2F_EventScript_ProfOakDefeated
+	msgbox PokemonMansion_2F_Text_ProfOakIntro, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, NO, PokemonMansion_2F_EventScript_ProfOakDeclined
+	msgbox PokemonMansion_2F_Text_ProfOakAccepted
+	trainerbattle_no_intro TRAINER_PROF_OAK_REMATCH, PokemonMansion_2F_Text_ProfOakDefeat
+	msgbox PokemonMansion_2F_Text_DefeatedProfOak
+	setflag FLAG_HIDE_OAK_MANSION
+	clearflag FLAG_HIDE_MEW
+	msgbox PokemonMansion_2F_Text_MewText
+	clearflag FLAG_HIDE_OAK_IN_HIS_LAB
+	closemessage
+	release
+	end
+
+PokemonMansion_2F_EventScript_ProfOakDeclined::
+	msgbox PokemonMansion_2F_Text_ProfOakDeclined
+	closemessage
+	release
+	end
+
+PokemonMansion_2F_EventScript_ProfOakDefeated::
+	msgbox PokemonMansion_2F_Text_DefeatedProfOak
+	closemessage
+	release
+	end
+
+PokemonMansion_2F_EventScript_Statue::
+	lockall
+	setvar VAR_0x8004, 1
+	call PokemonMansion_EventScript_SecretSwitch
+	playse SE_UNLOCK
+	special DrawWholeMapView
+	waitse
+	releaseall
+	end
+
+PokemonMansion_2F_EventScript_DiaryJuly5th::
+	msgbox PokemonMansion_1F_Text_NewMonDiscoveredInGuyanaJungle, MSGBOX_SIGN
+	end
+
+PokemonMansion_2F_EventScript_DiaryJuly10th::
+	msgbox PokemonMansion_1F_Text_ChristenedDiscoveredMonMew, MSGBOX_SIGN
+	end
+
+PokemonMansion_2F_EventScript_Arnie::
+	trainerbattle_single TRAINER_BURGLAR_ARNIE, PokemonMansion_1F_Text_ArnieIntro, PokemonMansion_1F_Text_ArnieDefeat
+	msgbox PokemonMansion_1F_Text_ArniePostBattle, MSGBOX_AUTOCLOSE
+	end

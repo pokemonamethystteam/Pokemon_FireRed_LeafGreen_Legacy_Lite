@@ -1,0 +1,13 @@
+SixIsland_OutcastIsland_MapScripts::
+	map_script MAP_SCRIPT_ON_LOAD, MossdeepCity_OnLoad
+	.byte 0
+
+MossdeepCity_OnLoad:
+	random 9
+	setvar VAR_ALTERING_CAVE_WILD_SET, VAR_RESULT
+	end
+
+SixIsland_OutcastIsland_EventScript_Rocket::
+	trainerbattle_single TRAINER_TEAM_ROCKET_GRUNT_46, SixIsland_OutcastIsland_Text_RocketIntro, SixIsland_OutcastIsland_Text_RocketDefeat
+	msgbox SixIsland_OutcastIsland_Text_RocketPostBattle, MSGBOX_AUTOCLOSE
+	end

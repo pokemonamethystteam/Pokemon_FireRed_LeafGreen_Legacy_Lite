@@ -1,0 +1,77 @@
+Things coppied from pokemon legacy
+
+    Boss teams
+    running indoors
+    running shoes from start
+    repel cost and reuse
+    Deletable HMs
+    Player faces away from nurse joy after healing
+    Save is shorter
+    Fishing guru added to vermillian city mart
+    Fishing guru's older brother replaces original fishing guru location
+    gift fossil added to old fishing guru's older brother location
+    Move is the first option in the pc
+    Game corner pokemon
+    Prof Oak battles 1 & 2
+    gym rematches
+    Changed level of revived fossil mons from 5 to 40
+    Items picked up while bag is full go to PC
+    Speed up while surfing by holding B
+    Hold A or B durring battle to speed up text
+    Pause between fainting cry and animation is half as long
+    Trees are cut permanetly
+    Victory road rocks are placed on switch upon reentering the room after solving the puzzle
+    Mew event
+    Added all stones to department store
+    Altering Cave radomly changes what Pokemon is in it each time you enter
+    Pokemon encounters
+    Pickup items
+
+    Pokemon info including
+        stats
+        evo conditions
+        moves
+        abilities
+        locations
+
+    Battle Changes
+        Ghost is specail
+        Dark is physical
+        Hail makes blizzard 100% accurate
+        Hail boosts defense for ice types
+        Sandstorm boosts sp defense for rock types and sand veil pokemon
+        Magma armor reduces damage from water attacks by 1/8
+        Stench reduces accuracy
+        Illuminate prevents accuracy loss and ingores evasion boosts
+
+Things not coppied from legacy
+
+    Espeon and Umbreon evolve from friendship using Wurmple's random method
+    Some learnset updates
+    Made bait/rocks more effective in safari zone
+    National dex isn't needed for cross gen evos
+    Added Brick Piece to held item to wild Tyrouge line
+    increased wild held item chance for magnemite, horsea, slowpoke, tyrouge, and poliwag  lines
+    60 Pokemon no longer required for National dex
+    Game corner item costs
+    Added up grade to Silph storage room
+    Berry spots made slightly more visible
+    Cerulean Cave is enterable without completing the Sevii Islands.
+    Sevii Islands encounters and trainers updated
+    Bill double checks if you want to go to the Sevii Islands when he asks
+
+
+
+Things to do
+
+Trainer rematch teams
+upload to github
+
+
+
+Nice to haves
+
+Out of battle effects
+Nurse Joy fight 
+Officer Jenny fight
+Janine Trainer Pic

@@ -1,0 +1,127 @@
+FuchsiaCity_House2_MapScripts::
+	.byte 0
+
+FuchsiaCity_House2_EventScript_FishingGurusBrother::
+	lock
+	faceplayer
+	goto_if_set FLAG_GOT_GOOD_ROD, FuchsiaCity_House2_EventScript_AlreadyGotGoodRod
+	msgbox FuchsiaCity_House2_Text_DoYouLikeToFish, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, YES, FuchsiaCity_House2_EventScript_GiveGoodRod
+	msgbox FuchsiaCity_House2_Text_OhThatsDisappointing
+	release
+	end
+
+FuchsiaCity_House2_EventScript_AlreadyGotGoodRod::
+	msgbox FuchsiaCity_House2_Text_HowAreTheFishBiting
+	release
+	end
+
+FuchsiaCity_House2_EventScript_GiveGoodRod::
+	msgbox FuchsiaCity_House2_Text_LikeYourStyleTakeThis
+	checkitemspace ITEM_GOOD_ROD
+	goto_if_eq VAR_RESULT, FALSE, FuchsiaCity_House2_EventScript_NoRoomForGoodRod
+	giveitem_msg FuchsiaCity_House2_Text_ReceivedGoodRod, ITEM_GOOD_ROD
+	msgbox FuchsiaCity_House2_Text_GoodRodCanCatchBetterMons
+	setflag FLAG_GOT_GOOD_ROD
+	release
+	end
+
+FuchsiaCity_House2_EventScript_NoRoomForGoodRod::
+	msgbox FuchsiaCity_House2_Text_YouHaveNoRoomForGift
+	release
+	end
+
+FuchsiaCity_House2_EventScript_FishingGurusBrother2::
+	lock
+	faceplayer
+	goto_if_set FLAG_GOT_UNCLAIMED_FOSSIL_MON, FuchsiaCity_House2_EventScript_AlreadyGotGoodRod
+	msgbox FuchsiaCity_House2_Text_DoYouLikeToFish, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, YES, FuchsiaCity_House2_EventScript_CheckFossil
+	msgbox FuchsiaCity_House2_Text_OhThatsDisappointing
+	release
+	end
+
+FuchsiaCity_House2_EventScript_CheckFossil::
+	msgbox FuchsiaCity_House2_Text_LikeYourStyleNoRod
+	goto_if_set FLAG_GOT_HELIX_FOSSIL, FuchsiaCity_House2_EventScript_GiveKabuto
+	goto_if_set FLAG_GOT_DOME_FOSSIL, FuchsiaCity_House2_EventScript_GiveOmanyte	
+	release
+	end
+
+FuchsiaCity_House2_EventScript_GiveKabuto::
+	setvar VAR_TEMP_1, SPECIES_KABUTO
+	givemon SPECIES_KABUTO, 10
+	goto_if_eq VAR_RESULT, 0, FuchsiaCity_House2_EventScript_GetKabutoParty
+	goto_if_eq VAR_RESULT, 1, FuchsiaCity_House2_EventScript_GetKabutoPC
+	goto_if_eq VAR_RESULT, 2, EventScript_NoMoreRoomForPokemon
+	release
+	end
+
+FuchsiaCity_House2_EventScript_GetKabutoParty::
+	playfanfare MUS_LEVEL_UP
+	message FuchsiaCity_House2_Text_ObtainedAnKabuto
+	waitmessage
+	waitfanfare
+	bufferspeciesname STR_VAR_1, SPECIES_KABUTO
+	msgbox Text_GiveNicknameToThisMon, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, NO, FuchsiaCity_House2_EventScript_SetGotMon
+	call EventScript_GetGiftMonPartySlot
+	call EventScript_ChangePokemonNickname
+	goto FuchsiaCity_House2_EventScript_SetGotMon
+	end
+
+FuchsiaCity_House2_EventScript_GetKabutoPC::
+	playfanfare MUS_LEVEL_UP
+	message FuchsiaCity_House2_Text_ObtainedAnKabuto
+	waitmessage
+	waitfanfare
+	bufferspeciesname STR_VAR_1, SPECIES_KABUTO
+	msgbox Text_GiveNicknameToThisMon, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, NO, FuchsiaCity_House2_EventScript_TransferMonToPC
+	call EventScript_NameReceivedBoxMon
+	goto FuchsiaCity_House2_EventScript_TransferMonToPC
+	end
+
+FuchsiaCity_House2_EventScript_GiveOmanyte::
+	setvar VAR_TEMP_1, SPECIES_OMANYTE
+	givemon SPECIES_OMANYTE, 10
+	goto_if_eq VAR_RESULT, 0, FuchsiaCity_House2_EventScript_GetOmanyteParty
+	goto_if_eq VAR_RESULT, 1, FuchsiaCity_House2_EventScript_GetOmanytePC
+	goto_if_eq VAR_RESULT, 2, EventScript_NoMoreRoomForPokemon
+	release
+	end
+
+FuchsiaCity_House2_EventScript_GetOmanyteParty::
+	playfanfare MUS_LEVEL_UP
+	message FuchsiaCity_House2_Text_ObtainedAnOmanyte
+	waitmessage
+	waitfanfare
+	bufferspeciesname STR_VAR_1, SPECIES_OMANYTE
+	msgbox Text_GiveNicknameToThisMon, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, NO, FuchsiaCity_House2_EventScript_SetGotMon
+	call EventScript_GetGiftMonPartySlot
+	call EventScript_ChangePokemonNickname
+	goto FuchsiaCity_House2_EventScript_SetGotMon
+	end
+
+FuchsiaCity_House2_EventScript_GetOmanytePC::
+	playfanfare MUS_LEVEL_UP
+	message FuchsiaCity_House2_Text_ObtainedAnOmanyte
+	waitmessage
+	waitfanfare
+	bufferspeciesname STR_VAR_1, SPECIES_OMANYTE
+	msgbox Text_GiveNicknameToThisMon, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, NO, FuchsiaCity_House2_EventScript_TransferMonToPC
+	call EventScript_NameReceivedBoxMon
+	goto FuchsiaCity_House2_EventScript_TransferMonToPC
+	end
+
+FuchsiaCity_House2_EventScript_TransferMonToPC:
+	call EventScript_TransferredToPC
+	goto FuchsiaCity_House2_EventScript_SetGotMon
+	end
+
+FuchsiaCity_House2_EventScript_SetGotMon::
+	setflag FLAG_GOT_UNCLAIMED_FOSSIL_MON
+	release
+	end
