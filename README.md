@@ -1,6 +1,6 @@
 # Pokemon_FireRed_LeafGreen_Legacy_Lite
 
-This project has no connection to the Pokemon Legacy Team or SmithPlaysPokemon.
+This project has no affiliation with the Pokemon Legacy Team or SmithPlaysPokemon.
 
 This project ports changes from Pokemon Yellow Legacy and Pokemon Emerald Legacy to Pokemon Fire Red and Leaf Green.
 
