@@ -2764,7 +2764,7 @@ static u32 CanTradeSelectedMon(struct Pokemon * playerParty, int partyCount, int
             return CANT_TRADE_EGG_YET;
     #endif
 
-        if (species2[monIdx] > KANTO_SPECIES_END)
+        if (species2[monIdx] > SPECIES_CHIMECHO)
             return CANT_TRADE_NATIONAL;
 
         // This is meant to be SPECIES_EGG. There are obviously no circumstances

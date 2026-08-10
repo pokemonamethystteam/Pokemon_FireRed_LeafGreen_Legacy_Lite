@@ -289,7 +289,7 @@ CeladonCity_GameCorner_PrizeRoom_EventScript_ChoosePrizeTM::
 
 CeladonCity_GameCorner_PrizeRoom_EventScript_TM13::
 	setvar VAR_TEMP_1, ITEM_TM13
-	setvar VAR_TEMP_2, 4000
+	setvar VAR_TEMP_2, 1000
 	buffermovename STR_VAR_2, MOVE_ICE_BEAM
 	goto CeladonCity_GameCorner_PrizeRoom_EventScript_ConfirmPrizeTM
 	end

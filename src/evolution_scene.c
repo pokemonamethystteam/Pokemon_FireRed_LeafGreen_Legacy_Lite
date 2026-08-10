@@ -1085,7 +1085,7 @@ static void Task_TradeEvolutionScene(u8 taskId)
     // yet unlocked, such as Crobat.
     if (!IsNationalPokedexEnabled()
         && gTasks[taskId].tState == T_EVOSTATE_WAIT_CYCLE_MON_SPRITE
-        && gTasks[taskId].tPostEvoSpecies > SPECIES_MEW)
+        && gTasks[taskId].tPostEvoSpecies > SPECIES_CHIMECHO)
     {
         gTasks[taskId].tState = EVOSTATE_TRY_LEARN_MOVE;
         gTasks[taskId].tEvoWasStopped = TRUE;

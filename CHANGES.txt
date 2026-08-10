@@ -55,19 +55,19 @@ Things not coppied from legacy
     60 Pokemon no longer required for National dex
     Game corner item costs
     Added up grade to Silph storage room
+    Added Dragon Scale to Seafoam Islands BF2
+    Added Metal Coat to Saffron City
+    Added Kings Rock to Cerulean City (Requires Bill)
     Berry spots made slightly more visible
     Cerulean Cave is enterable without completing the Sevii Islands.
     Sevii Islands encounters and trainers updated
     Bill double checks if you want to go to the Sevii Islands when he asks
 
+Patch notes
 
 
 Things to do
-
-Trainer rematch teams
-upload to github
-
-
+Update Sevii Islands
 
 Nice to haves
 

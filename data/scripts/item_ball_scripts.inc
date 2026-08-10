@@ -94,6 +94,10 @@ Route9_EventScript_ItemTM40::
 	finditem ITEM_TM40
 	end
 
+CeruleanCity_EventScript_ItemKingsRock::
+	finditem ITEM_KINGS_ROCK
+	end
+
 RocketHideout_B1F_EventScript_ItemEscapeRope::
 	finditem ITEM_ESCAPE_ROPE
 	end
@@ -454,6 +458,10 @@ RockTunnel_B1F_EventScript_ItemMaxEther::
 	finditem ITEM_MAX_ETHER
 	end
 
+Saffron_City_EventScript_ItemMetalCoat::
+	finditem ITEM_METAL_COAT
+	end
+
 SilphCo_8F_EventScript_ItemIron::
 	finditem ITEM_IRON
 	end
@@ -516,6 +524,10 @@ SeafoamIslands_B1F_EventScript_ItemRevive::
 
 SeafoamIslands_B2F_EventScript_ItemBigPearl::
 	finditem ITEM_BIG_PEARL
+	end
+
+SeafoamIslands_B2F_EventScript_ItemDragonScale::
+	finditem ITEM_DRAGON_SCALE
 	end
 
 SeafoamIslands_B4F_EventScript_ItemUltraBall::

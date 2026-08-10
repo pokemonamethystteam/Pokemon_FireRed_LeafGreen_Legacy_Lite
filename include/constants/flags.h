@@ -852,9 +852,9 @@
 #define FLAG_TREE48                 0x32F
 
 //Unused
-#define FLAG_0x330               0x330
-#define FLAG_0x331               0x331
-#define FLAG_0x332               0x332
+#define FLAG_HIDE_SEAFOAM_ISLANDS_B2F_DRAGON_SCALE      0x330
+#define FLAG_HIDE_SAFFRON_CITY_METAL_COAT               0x331
+#define FLAG_HIDE_CERULEAN_CITY_KINGS_ROCK              0x332
 #define FLAG_0x333               0x333
 #define FLAG_0x334               0x334
 #define FLAG_0x335               0x335
