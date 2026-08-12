@@ -238,12 +238,14 @@ static s32 GetRoamerPokedexAreaMarkers(u16 species, struct Subsprite * subsprite
     s32 roamerIdx;
     u16 dexArea;
     s32 tableIndex;
+    u16 newVarRoamerSpecies;
 
     // Make sure that this is a roamer species, and that it corresponds to the player's starter.
     roamerIdx = GetRoamerIndex(species);
+    newVarRoamerSpecies = GetRoamerSpecies();
     if (roamerIdx < 0)
         return 0;
-    if (sRoamerPairs[roamerIdx].starter != GetStarterSpecies())
+    if (sRoamerPairs[roamerIdx].roamer != newVarRoamerSpecies)
         return 0;
 
     mapSecId = GetRoamerLocationMapSectionId();

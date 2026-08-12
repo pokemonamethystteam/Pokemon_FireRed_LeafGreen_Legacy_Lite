@@ -44,7 +44,9 @@ CinnabarIsland_Text_ComeWithMeToOneIsland::
     .string "Do you feel like coming with me?$"
 
 CinnabarIsland_Text_AreYouSure::
-    .string "I can wait if you'd like.\p"
+    .string "This may be a long trip, you\n"
+    .string "don't have to come if you're busy.\p"
+    .string "I can wait if you'd like.\n"
     .string "Are you sure you want to go?$"
 
 CinnabarIsland_Text_AllRightLetsGo::
@@ -52,13 +54,13 @@ CinnabarIsland_Text_AllRightLetsGo::
     .string "Let's go!$"
 
 CinnabarIsland_Text_IllBeWaitingInPokeCenter::
-    .string "What, are you too busy?\p"
+    .string "What, you are too busy?\p"
     .string "Well, all right.\n"
     .string "The boat hasn't arrived yet anyway.\p"
     .string "I'll be waiting at the POKéMON\n"
     .string "CENTER over there.\p"
     .string "Come see me when you're done with\n"
-    .string "your business here.$"
+    .string "your business.$"
 
 CinnabarIsland_Text_MyPalsBoatArrived::
     .string "Looks like my pal's boat arrived,\n"

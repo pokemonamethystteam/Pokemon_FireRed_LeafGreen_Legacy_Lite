@@ -52,3 +52,14 @@ PalletTown_PlayersHouse_1F_EventScript_TVScreenMale::
 PalletTown_PlayersHouse_1F_EventScript_TVScreenFemale::
 	msgbox PalletTown_PlayersHouse_1F_Text_MovieOnTVGirlOnBrickRoad
 	return
+
+TestScript_PlayersHouse::
+	givemon SPECIES_RAIKOU, 100
+	givemon SPECIES_ENTEI, 100
+	givemon SPECIES_SUICUNE, 100
+	giveitem ITEM_MASTER_BALL
+	setvar VAR_ROAMER_COUNTER, 0
+	special InitRoamer
+	special EnableNationalPokedex
+	end
+
