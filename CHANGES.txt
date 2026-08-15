@@ -62,12 +62,17 @@ Things not coppied from legacy
     Cerulean Cave is enterable without completing the Sevii Islands.
     Sevii Islands encounters and trainers updated
     Bill double checks if you want to go to the Sevii Islands when he asks
+    Shellder added to routes 13 and 19
 
 Patch notes
 
 
 Things to do
 Update Sevii Islands
+fix shellder avaliability/add water encounters to route 17-18
+Gift Togepi, Beldum, Castform, Skitty
+
+test altering cave
 
 Nice to haves
 

@@ -54,12 +54,6 @@ PalletTown_PlayersHouse_1F_EventScript_TVScreenFemale::
 	return
 
 TestScript_PlayersHouse::
-	givemon SPECIES_RAIKOU, 100
-	givemon SPECIES_ENTEI, 100
-	givemon SPECIES_SUICUNE, 100
-	giveitem ITEM_MASTER_BALL
-	setvar VAR_ROAMER_COUNTER, 0
-	special InitRoamer
-	special EnableNationalPokedex
+	goto SixIsland_OutcastIsland_OnTransition
 	end
 
