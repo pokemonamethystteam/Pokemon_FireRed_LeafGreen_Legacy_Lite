@@ -150,6 +150,15 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_DeoxysD;
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_DeoxysA;
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_DeoxysN;
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_SSAnne;
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Latias;
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Latios;
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_KyogreFront;
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_GroudonFront;
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Regirock;
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Regice;
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Registeel;
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Rayquaza;
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Jirachi;
 
 
 const struct ObjectEventGraphicsInfo *const gObjectEventGraphicsInfoPointers[NUM_OBJ_EVENT_GFX] = {
@@ -305,4 +314,13 @@ const struct ObjectEventGraphicsInfo *const gObjectEventGraphicsInfoPointers[NUM
     [OBJ_EVENT_GFX_DEOXYS_A]                 = &gObjectEventGraphicsInfo_DeoxysA,
     [OBJ_EVENT_GFX_DEOXYS_N]                 = &gObjectEventGraphicsInfo_DeoxysN,
     [OBJ_EVENT_GFX_SS_ANNE]                  = &gObjectEventGraphicsInfo_SSAnne,
+    [OBJ_EVENT_GFX_LATIAS]                   = &gObjectEventGraphicsInfo_Latias,
+    [OBJ_EVENT_GFX_LATIOS]                   = &gObjectEventGraphicsInfo_Latios,
+    [OBJ_EVENT_GFX_KYOGRE_FRONT]             = &gObjectEventGraphicsInfo_KyogreFront,
+    [OBJ_EVENT_GFX_GROUDON_FRONT]            = &gObjectEventGraphicsInfo_GroudonFront,
+    [OBJ_EVENT_GFX_REGIROCK]                 = &gObjectEventGraphicsInfo_Regirock,
+    [OBJ_EVENT_GFX_REGICE]                   = &gObjectEventGraphicsInfo_Regice,
+    [OBJ_EVENT_GFX_REGISTEEL]                = &gObjectEventGraphicsInfo_Registeel,
+    [OBJ_EVENT_GFX_RAYQUAZA]                 = &gObjectEventGraphicsInfo_Rayquaza,
+    [OBJ_EVENT_GFX_JIRACHI]                  = &gObjectEventGraphicsInfo_Jirachi,
 };

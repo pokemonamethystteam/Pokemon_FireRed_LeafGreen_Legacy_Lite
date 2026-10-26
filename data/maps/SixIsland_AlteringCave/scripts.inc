@@ -4,4 +4,22 @@ SixIsland_AlteringCave_MapScripts::
 
 SixIsland_AlteringCave_OnTransition::
 	setworldmapflag FLAG_WORLD_MAP_SIX_ISLAND_ALTERING_CAVE
+	goto_if_unset FLAG_HIDE_JIRACHI_ENTRANCE, SixIsland_AlteringCave_HideJirachiCaveEntrance
+	goto_if_unset FLAG_HIDE_JIRACHI_MAN_CAVE, SixIsland_AlteringCave_RemoveOldManTest
+	end
+
+SixIsland_AlteringCave_HideJirachiCaveEntrance::
+	setmetatile 28, 10 METATILE_RockTunnel_DirtGround, 0
+	return
+	end
+
+SixIsland_AlteringCave_RemoveOldManTest::
+	goto_if_set FLAG_HIDE_JIRACHI_MAN, SixIsland_AlteringCave_RemoveOldMan
+	return
+	end
+
+SixIsland_AlteringCave_RemoveOldMan::
+	setflag FLAG_HIDE_JIRACHI_MAN_CAVE
+	removeobject LOCALID_JIRACHI_MAN_CAVE
+	return
 	end

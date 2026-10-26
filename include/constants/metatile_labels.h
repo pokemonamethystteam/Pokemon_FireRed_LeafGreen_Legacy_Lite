@@ -167,6 +167,9 @@
 #define METATILE_PokemonMansion_Wall_EndPost_Bottom                      0x2AD
 #define METATILE_PokemonMansion_Wall_EndPost_Mid                         0x2A5
 
+// gTileset_RockTunnel
+#define METATILE_RockTunnel_DirtGround  0x281
+
 // gTileset_SSAnne
 #define METATILE_SSAnne_Door  0x281
 

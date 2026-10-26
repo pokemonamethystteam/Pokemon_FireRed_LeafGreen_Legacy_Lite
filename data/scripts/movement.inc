@@ -45,6 +45,10 @@ Common_Movement_FaceRight::
 	face_right
 	step_end
 
+Common_Movement_FaceLeft::
+	face_left
+	step_end
+
 Common_Movement_FaceDown::
 	face_down
 	step_end

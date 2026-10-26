@@ -38,6 +38,8 @@ CinnabarIsland_Text_ComeWithMeToOneIsland::
     .string "how about spending time with me?\p"
     .string "There's this little island in the far\n"
     .string "south called ONE ISLAND.\p"
+    .string "There are POKéMON there that you\n"
+    .string "can't find in KANTO.\p"
     .string "A friend invited me, so I'm on my\n"
     .string "way out there.\p"
     .string "How about it?\n"

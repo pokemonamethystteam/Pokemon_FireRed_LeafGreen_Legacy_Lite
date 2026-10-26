@@ -89,6 +89,7 @@ BirthIsland_Exterior_EventScript_Deoxys::
 	goto_if_eq VAR_RESULT, B_OUTCOME_WON, BirthIsland_Exterior_EventScript_DefeatedDeoxys
 	goto_if_eq VAR_RESULT, B_OUTCOME_RAN, BirthIsland_Exterior_EventScript_RanFromDeoxys
 	goto_if_eq VAR_RESULT, B_OUTCOME_PLAYER_TELEPORTED, BirthIsland_Exterior_EventScript_RanFromDeoxys
+	goto_if_eq VAR_REMOTE_LAB_STATE, 0, BirthIsland_Exterior_EventScript_SetLabState
 	setflag FLAG_FOUGHT_DEOXYS
 	release
 	end
@@ -96,13 +97,19 @@ BirthIsland_Exterior_EventScript_Deoxys::
 BirthIsland_Exterior_EventScript_DefeatedDeoxys::
 	setflag FLAG_DEOXYS_FLEW_AWAY
 	setvar VAR_0x8004, SPECIES_DEOXYS
+	goto_if_eq VAR_REMOTE_LAB_STATE, 0, BirthIsland_Exterior_EventScript_SetLabState
 	goto EventScript_MonFlewAway
 	end
 
 BirthIsland_Exterior_EventScript_RanFromDeoxys::
 	setvar VAR_0x8004, SPECIES_DEOXYS
+	goto_if_eq VAR_REMOTE_LAB_STATE, 0, BirthIsland_Exterior_EventScript_SetLabState
 	goto EventScript_MonFlewAway
 	end
+
+BirthIsland_Exterior_EventScript_SetLabState::
+	setvar VAR_REMOTE_LAB_STATE, 1
+	return
 
 Movement_DeoxysApproach:
 	walk_slower_down

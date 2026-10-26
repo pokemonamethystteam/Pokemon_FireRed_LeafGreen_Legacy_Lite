@@ -3,10 +3,13 @@ SaffronCity_Gym_MapScripts::
 
 SaffronCity_Gym_EventScript_Sabrina::
 	famechecker FAMECHECKER_SABRINA, FCPICKSTATE_COLORED, UpdatePickStateFromSpecialVar8005
+	goto_if_set FLAG_SYS_GAME_CLEAR, SaffronCity_Gym_EventScript_SabrinaPostGame	
+	goto_if_set FLAG_DEFEATED_SABRINA, SaffronCity_Gym_EventScript_SabrinaPostBattle	
 	goto_if_unset FLAG_BEAT_GYM_4, SaffronCity_Gym_EventScript_Sabrina4
-	goto_if_unset FLAG_BEAT_GYM_5, SaffronCity_Gym_EventScript_Sabrina5
-	goto_if_set FLAG_SYS_GAME_CLEAR, SaffronCity_Gym_EventScript_SabrinaPost		
+	goto_if_unset FLAG_BEAT_GYM_5, SaffronCity_Gym_EventScript_Sabrina5	
 	trainerbattle_single TRAINER_LEADER_SABRINA6, SaffronCity_Gym_Text_SabrinaIntro, SaffronCity_Gym_Text_SabrinaDefeat, SaffronCity_Gym_EventScript_DefeatedSabrina6, NO_MUSIC
+
+SaffronCity_Gym_EventScript_SabrinaPostBattle::
 	goto_if_unset FLAG_GOT_TM04_FROM_SABRINA, SaffronCity_Gym_EventScript_GiveTM04
 	msgbox SaffronCity_Gym_Text_ExplainTM04
 	release
@@ -74,7 +77,7 @@ SaffronCity_Gym_EventScript_NoRoomForTM04::
 	release
 	end
 
-SaffronCity_Gym_EventScript_SabrinaPost::
+SaffronCity_Gym_EventScript_SabrinaPostGame::
  	msgbox SaffronCity_Gym_Text_SabrinaPostIntro, MSGBOX_YESNO
 	goto_if_eq VAR_RESULT, NO, Gym_EventScript_PostDeclined
 	msgbox SaffronCity_Gym_Text_SabrinaPostIntro2

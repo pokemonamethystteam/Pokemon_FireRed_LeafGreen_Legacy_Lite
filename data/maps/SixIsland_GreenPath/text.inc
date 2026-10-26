@@ -19,3 +19,6 @@ SixIsland_GreenPath_Text_RightRouteSign::
     .string "GREEN PATH\n"
     .string "Think Green, Keep Nature Clean!$"
 
+SixIsland_GreenPath_Text_LabSign::
+    .string "SEVII ISLANDS\n"
+    .string "REMOTE RESEARCH LAB$"

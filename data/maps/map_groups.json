@@ -174,7 +174,8 @@
     "SixIsland_DottedHole_B4F",
     "SixIsland_DottedHole_SapphireRoom",
     "SixIsland_PatternBush",
-    "SixIsland_AlteringCave"
+    "SixIsland_AlteringCave",
+    "SixIsland_AlteringCave_JirachiRoom"
   ],
   "gMapGroup_SpecialArea": [
     "NavelRock_Exterior",
@@ -550,7 +551,8 @@
   ],
   "gMapGroup_IndoorSixIslandRoute": [
     "SixIsland_WaterPath_House1",
-    "SixIsland_WaterPath_House2"
+    "SixIsland_WaterPath_House2",
+    "SixIsland_GreenPath_WeatherLab"
   ],
   "gMapGroup_IndoorSevenIslandRoute": [
     "SevenIsland_SevaultCanyon_House"

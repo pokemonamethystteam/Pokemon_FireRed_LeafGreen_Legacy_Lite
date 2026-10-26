@@ -190,21 +190,21 @@
 #define FLAG_HIDE_SAFFRON_CITY_POKECENTER_SABRINA_JOURNALS 0x0AE
 
 // Unused?
-#define FLAG_0x0AF               0x0AF
-#define FLAG_0x0B0               0x0B0
-#define FLAG_0x0B1               0x0B1
-#define FLAG_0x0B2               0x0B2
-#define FLAG_0x0B3               0x0B3
-#define FLAG_0x0B4               0x0B4
-#define FLAG_0x0B5               0x0B5
-#define FLAG_0x0B6               0x0B6
-#define FLAG_0x0B7               0x0B7
-#define FLAG_0x0B8               0x0B8
-#define FLAG_0x0B9               0x0B9
-#define FLAG_0x0BA               0x0BA
-#define FLAG_0x0BB               0x0BB
-#define FLAG_0x0BC               0x0BC
-#define FLAG_0x0BD               0x0BD
+#define FLAG_PLAYERS_HOUSE_REVEAL_BELDUM                    0x0AF
+#define FLAG_PLAYERS_HOUSE_REVEAL_LETTER                    0x0B0
+#define FLAG_GREEN_PATH_CASTFORM                            0x0B1
+#define FLAG_DECLINED_AURORA_TICKET                         0x0B2
+#define FLAG_CAUGHT_RAYQUAZA                                0x0B3
+#define FLAG_RAYQUAZA_FLEW_AWAY                             0x0B4
+#define FLAG_HIDE_WEATHER_GUY                               0x0B5
+#define FLAG_RESARCHLAB_OLDMAN_INTRODUCTION                 0x0B6
+#define FLAG_CAUGHT_JIRACHI                                 0x0B7
+#define FLAG_JIRACHI_FLEW_AWAY                              0x0B8
+#define FLAG_HIDE_JIRACHI                                   0x0B9
+#define FLAG_HIDE_JIRACHI_MAN                               0x0BA
+#define FLAG_HIDE_JIRACHI_MAN_CAVE                          0x0BB
+#define FLAG_HIDE_JIRACHI_ENTRANCE                          0x0BC
+#define FLAG_OPEN_REGI_CAVES                                0x0BD
 #define FLAG_0x0BE               0x0BE
 #define FLAG_0x0BF               0x0BF
 #define FLAG_0x0C0               0x0C0

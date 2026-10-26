@@ -15,6 +15,8 @@ EventScript_ResetLegendaries::
 	clearflag FLAG_LUGIA_FLEW_AWAY
 	clearflag FLAG_HO_OH_FLEW_AWAY
 	clearflag FLAG_DEOXYS_FLEW_AWAY
+	clearflag FLAG_RAYQUAZA_FLEW_AWAY
+	clearflag FLAG_JIRACHI_FLEW_AWAY
 	return
 
 EventScript_ResetEliteFourEnd::

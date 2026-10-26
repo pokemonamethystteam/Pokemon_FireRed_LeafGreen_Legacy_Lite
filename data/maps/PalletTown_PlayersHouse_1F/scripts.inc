@@ -1,6 +1,63 @@
 PalletTown_PlayersHouse_1F_MapScripts::
 	.byte 0
 
+PalletTown_PlayersHouse_1F_EventScript_Beldum::
+	lock
+	goto_if_set FLAG_PLAYERS_HOUSE_REVEAL_LETTER, PalletTown_PlayersHouse_1F_EventScript_BeldumPostLetter
+	applymovement LOCALID_MOM, Common_Movement_ExclamationMark
+	waitmovement 0
+	applymovement LOCALID_MOM, Common_Movement_WalkInPlaceFasterUp
+	msgbox PalletTown_PlayersHouse_1F_Text_YouveGotMail
+	waitmessage
+	applymovement LOCALID_MOM, Common_Movement_FaceOriginalDirection
+	waitmovement 0
+	setflag FLAG_PLAYERS_HOUSE_REVEAL_LETTER
+PalletTown_PlayersHouse_1F_EventScript_BeldumPostLetter::
+	setvar VAR_TEMP_1, SPECIES_BELDUM
+	givemon SPECIES_BELDUM, 5
+	goto_if_eq VAR_RESULT, 0, PalletTown_PlayersHouse_1F_EventScript_GetBeldumParty
+	goto_if_eq VAR_RESULT, 1, PalletTown_PlayersHouse_1F_EventScript_GetBeldumPC
+	goto_if_eq VAR_RESULT, 2, EventScript_NoMoreRoomForPokemon
+	release
+	end
+
+PalletTown_PlayersHouse_1F_EventScript_GetBeldumParty::
+	removeobject LOCALID_BELDUM_BALL
+	playfanfare MUS_LEVEL_UP
+	message PalletTown_PlayersHouse_1F_Text_ObtainedAnBeldum
+	waitmessage
+	waitfanfare
+	bufferspeciesname STR_VAR_1, SPECIES_BELDUM
+	msgbox Text_GiveNicknameToThisMon, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, NO, PalletTown_PlayersHouse_1F_EventScript_SetGotBeldum
+	call EventScript_GetGiftMonPartySlot
+	call EventScript_ChangePokemonNickname
+	goto PalletTown_PlayersHouse_1F_EventScript_SetGotBeldum
+	end
+
+PalletTown_PlayersHouse_1F_EventScript_GetBeldumPC::
+	removeobject LOCALID_BELDUM_BALL
+	playfanfare MUS_LEVEL_UP
+	message PalletTown_PlayersHouse_1F_Text_ObtainedAnBeldum
+	waitmessage
+	waitfanfare
+	bufferspeciesname STR_VAR_1, SPECIES_BELDUM
+	msgbox Text_GiveNicknameToThisMon, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, NO, PalletTown_PlayersHouse_1F_EventScript_TransferBeldumToPC
+	call EventScript_NameReceivedBoxMon
+	goto PalletTown_PlayersHouse_1F_EventScript_TransferBeldumToPC
+	end
+
+PalletTown_PlayersHouse_1F_EventScript_TransferBeldumToPC::
+	call EventScript_TransferredToPC
+	goto PalletTown_PlayersHouse_1F_EventScript_SetGotBeldum
+	end
+
+PalletTown_PlayersHouse_1F_EventScript_SetGotBeldum::
+	setflag FLAG_PLAYERS_HOUSE_REVEAL_BELDUM
+	release
+	end
+
 PalletTown_PlayersHouse_1F_EventScript_Mom::
 	lock
 	faceplayer

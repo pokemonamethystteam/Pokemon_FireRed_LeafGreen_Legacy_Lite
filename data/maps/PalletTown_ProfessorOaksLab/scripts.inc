@@ -118,6 +118,7 @@ PalletTown_ProfessorOaksLab_EventScript_NationalDexScene::
 	setvar VAR_MAP_SCENE_PALLET_TOWN_PROFESSOR_OAKS_LAB, 8
 	clearflag FLAG_ROUTE1_PROF_OAK_DEFEATED
 	setflag FLAG_HIDE_OAK_IN_HIS_LAB
+	clearflag FLAG_PLAYERS_HOUSE_REVEAL_BELDUM
 	releaseall
 	end
 
@@ -908,7 +909,6 @@ PalletTown_ProfessorOaksLab_Movement_VerticalPacing:
 PalletTown_ProfessorOaksLab_EventScript_TryStartNationalDexScene::
 	call PokedexRating_EventScript_RateInPerson
 	closemessage
-	goto_if_unset FLAG_WORLD_MAP_ONE_ISLAND, PalletTown_ProfessorOaksLab_EventScript_DontStartNationalDexScene
 	delay 30
 	msgbox PalletTown_ProfessorOaksLab_Text_OakFavorToAskYouPlayer
 	goto PalletTown_ProfessorOaksLab_EventScript_NationalDexScene

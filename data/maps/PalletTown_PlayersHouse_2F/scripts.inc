@@ -18,6 +18,7 @@ PalletTown_PlayersHouse_2F_OnWarp::
 PalletTown_PlayersHouse_2F_FirstWarpIn::
 	turnobject LOCALID_PLAYER, DIR_NORTH
 	setflag FLAG_SYS_B_DASH
+	setflag FLAG_PLAYERS_HOUSE_REVEAL_BELDUM
 	setvar VAR_MAP_SCENE_PALLET_TOWN_PLAYERS_HOUSE_2F, 1
 	end
 
@@ -51,3 +52,22 @@ EventScript_PalletTown_PlayersHouse_2F_ShutDownPC::
 	special SetHelpContextForMap
 	releaseall
 	end
+
+TestScriptTheBestScript::
+	lock
+	goto TestScriptTheBestScript2
+	msgbox TestBoxTheBestBox3, MSGBOX_NPC
+	waitmessage
+	release
+	end
+
+TestScriptTheBestScript3::
+	msgbox TestBoxTheBestBox, MSGBOX_NPC
+	waitmessage
+	return
+
+TestScriptTheBestScript2::
+	goto TestScriptTheBestScript3
+	msgbox TestBoxTheBestBox2, MSGBOX_NPC
+	waitmessage
+	return

@@ -36,3 +36,21 @@ PalletTown_PlayersHouse_1F_Text_MovieOnTVGirlOnBrickRoad::
 PalletTown_PlayersHouse_1F_Text_OopsWrongSide::
     .string "Oops, wrong side…$"
 
+PalletTown_PlayersHouse_1F_Text_ObtainedAnBeldum::
+    .string "{PLAYER} obtained an BELDUM!$"
+
+PalletTown_PlayersHouse_1F_Text_YouveGotMail::
+    .string "MOM: Oh, {PLAYER}!\n"
+    .string "I was just reading this letter\l"
+    .string "that came while you were gone!\p"
+    .string "...\n"
+    .string "Here, you should read it.\p"
+    .string "{PLAYER}, congratulations on\n"
+    .string "becoming the KANTO LEAGUE\l"
+    .string "CHAMPION!\p"
+    .string "I hope we can meet sometime.\n"
+    .string "From one CHAMPION to another,\l"
+    .string "- STEVEN STONE\p"
+    .string "P.S. I encluded a something\n"
+    .string "with the letter.\l"
+    .string "Take good care of it.$"

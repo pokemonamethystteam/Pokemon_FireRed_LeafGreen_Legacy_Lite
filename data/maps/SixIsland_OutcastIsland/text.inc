@@ -83,3 +83,16 @@ SixIsland_OutcastIsland_Text_GebNotEnoughMons::
     .string "GEB: Please battle against me and\n"
     .string "my sister!\p"
     .string "…Oh, you don't have two POKéMON?$"
+
+SixIsland_OutcastIsland_Text_Rayquaza1::
+    .string "It sure is windy!$"
+
+SixIsland_OutcastIsland_Text_Rayquaza2::
+    .string "I don't see anything!$"
+
+SixIsland_OutcastIsland_Text_RayquazaLeave::
+    .string "...\p"
+    .string "Sniff...\n"
+    .string "Thank you... For saving me...\p"
+    .string "I think...\n"
+    .string "I need to go...$"

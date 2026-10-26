@@ -8,3 +8,7 @@ SixIsland_GreenPath_EventScript_RightRouteSign::
 SixIsland_GreenPath_EventScript_LeftRouteSign::
 	msgbox SixIsland_GreenPath_Text_RightRouteSign, MSGBOX_SIGN
 	end
+
+SixIsland_GreenPath_EventScript_LabSign::
+	msgbox SixIsland_GreenPath_Text_LabSign, MSGBOX_SIGN
+	end

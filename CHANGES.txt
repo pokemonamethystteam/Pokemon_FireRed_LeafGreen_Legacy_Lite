@@ -63,6 +63,12 @@ Things not coppied from legacy
     Sevii Islands encounters and trainers updated
     Bill double checks if you want to go to the Sevii Islands when he asks
     Shellder added to routes 13 and 19
+    Catching tutorial is optional
+    Removed running shoes aid
+    Beldum gift added to players house after getting national dex
+    Gift Castform from a scientist in the Six Island Town.
+    Aurora Pass given by scientist in the new lab on Green Path.
+    Rayquaza Event added to green path lab
 
 Patch notes
 
@@ -70,9 +76,22 @@ Patch notes
 Things to do
 Update Sevii Islands
 fix shellder avaliability/add water encounters to route 17-18
-Gift Togepi, Beldum, Castform, Skitty
+Gift Castform, Skitty
+Add deep sea tooth/scale and make them infinite
+TM/HM shop
+Reusable move tutors
+Regis
+Lugia/Ho-Oh event that is just the same from Emerald EX.
 
-test altering cave
+Add text for the remote resarch lab, 
+Add Deoxys forms
+Add wishing sceintist guy
+Raquaza chasing Deoxys
+Groudon and Kyogre after Rayquaza defeated.
+Jirachi in altering cave.
+Altering cave explanation.
+
+
 
 Nice to haves
 
