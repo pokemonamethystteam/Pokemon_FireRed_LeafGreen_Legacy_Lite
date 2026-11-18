@@ -58,3 +58,37 @@ Trade_Text_ThanksYoureAPal::
 Trade_Text_HowIsMyOldMon::
 	.string "How is my old {STR_VAR_2}?\n"
 	.string "My {STR_VAR_1} is doing great!$"
+
+Trade_Text_LookingForMonWannaTradeForMonFossil::
+	.string "I'm trying to rebuild the\n"
+	.string "populations of extinct\l"
+	.string "POKéMON!\p"
+	.string "I'm looking for the ancient\n"
+	.string "POKéMON {STR_VAR_1}.\p"
+	.string "Wanna trade one for my\n"
+	.string "hatchling {STR_VAR_2}?$"
+
+Trade_Text_HowIsMyOldMonGrowing::
+	.string "How is the ANORITH doing?\p"
+	.string "My OMANYTE population\n"
+	.string "is growing!$"
+
+Trade_Text_LookingForMonWannaTradeForMonFossilThom::
+	.string "I collect FOSSILS for my wife\n"
+	.string "over there.\p"
+	.string "She's trying to bring back old\n"
+	.string "species!\p"
+	.string "She let me have this LILEEP,\n"
+	.string "but I'd rather have something\l"
+	.string "cooler...\p"
+	.string "Would you trade a KABUTO for\n"
+	.string "my LILEEP?$"
+
+Trade_Text_ThatsAlright::
+	.string "That's alright.\n"
+	.string "I'll be here if you change\l"
+	.string "your mind!$"
+
+Trade_Text_HowIsMyOldMonBlast::
+	.string "How is my old {STR_VAR_2}?\n"
+	.string "My {STR_VAR_1} is a blast!$"

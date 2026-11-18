@@ -54,20 +54,24 @@ EventScript_PalletTown_PlayersHouse_2F_ShutDownPC::
 	end
 
 TestScriptTheBestScript::
-	lock
-	goto TestScriptTheBestScript2
-	msgbox TestBoxTheBestBox3, MSGBOX_NPC
-	waitmessage
-	release
+	givemon SPECIES_DEOXYS, 100
+	givemon SPECIES_DEOXYS_ATTACK, 100
+	giveitem ITEM_MASTER_BALL
+	setflag FLAG_SYS_POKEMON_GET
+	setflag FLAG_CAUGHT_DEOXYS
+	end
+
+TestScriptTheBestScript2::
+	givemon SPECIES_OMANYTE, 100
+	giveitem ITEM_MASTER_BALL
+	giveitem ITEM_DOME_FOSSIL
+	setflag FLAG_SYS_POKEMON_GET
 	end
 
 TestScriptTheBestScript3::
-	msgbox TestBoxTheBestBox, MSGBOX_NPC
-	waitmessage
-	return
-
-TestScriptTheBestScript2::
-	goto TestScriptTheBestScript3
-	msgbox TestBoxTheBestBox2, MSGBOX_NPC
-	waitmessage
-	return
+	givemon SPECIES_KABUTO, 100
+	giveitem ITEM_HM03
+	giveitem ITEM_OLD_AMBER
+	setflag FLAG_SYS_POKEMON_GET
+	setflag FLAG_BADGE05_GET
+	end

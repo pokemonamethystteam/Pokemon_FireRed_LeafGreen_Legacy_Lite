@@ -19,9 +19,10 @@ SeafoamIslands_B4F_EventScript_TryRemoveArticuno::
 	return
 
 SeafoamIslands_B4F_OnTransition::
-	call_if_unset FLAG_FOUGHT_ARTICUNO, SeafoamIslands_B4F_EventScript_ShowArticuno
 	call_if_unset FLAG_STOPPED_SEAFOAM_B4F_CURRENT, SeafoamIslands_B4F_EventScript_CheckStoppedCurrent
 	call_if_set FLAG_STOPPED_SEAFOAM_B4F_CURRENT, SeafoamIslands_B4F_EventScript_SetNoCurrentLayout
+	call_if_unset FLAG_FOUGHT_ARTICUNO, SeafoamIslands_B4F_EventScript_ShowArticunoTest
+	setflag FLAG_HIDE_ARTICUNO
 	end
 
 SeafoamIslands_B4F_EventScript_CheckStoppedCurrent::
@@ -41,7 +42,12 @@ SeafoamIslands_B4F_EventScript_SetNoCurrentLayout::
 
 SeafoamIslands_B4F_EventScript_ShowArticuno::
 	clearflag FLAG_HIDE_ARTICUNO
-	return
+	end
+
+SeafoamIslands_B4F_EventScript_ShowArticunoTest::
+	call_if_unset FLAG_ARTICUNO_FLED, SeafoamIslands_B4F_EventScript_ShowArticuno
+	setflag FLAG_HIDE_ARTICUNO
+	end
 
 SeafoamIslands_B4F_OnLoad::
 	setvar NUM_BOULDERS_PRESENT, 0
@@ -170,19 +176,17 @@ SeafoamIslands_B4F_EventScript_Articuno::
 	waitstate
 	clearflag FLAG_SYS_SPECIAL_WILD_BATTLE
 	specialvar VAR_RESULT, GetBattleOutcome
-	goto_if_eq VAR_RESULT, B_OUTCOME_WON, SeafoamIslands_B4F_EventScript_DefeatedArticuno
+	goto_if_eq VAR_RESULT, B_OUTCOME_WON, SeafoamIslands_B4F_EventScript_RanFromArticuno
 	goto_if_eq VAR_RESULT, B_OUTCOME_RAN, SeafoamIslands_B4F_EventScript_RanFromArticuno
 	goto_if_eq VAR_RESULT, B_OUTCOME_PLAYER_TELEPORTED, SeafoamIslands_B4F_EventScript_RanFromArticuno
 	setflag FLAG_FOUGHT_ARTICUNO
+	setflag FLAG_HIDE_ARTICUNO
 	release
 	end
 
-SeafoamIslands_B4F_EventScript_DefeatedArticuno::
-	setflag FLAG_FOUGHT_ARTICUNO
-	goto EventScript_RemoveStaticMon
-	end
-
 SeafoamIslands_B4F_EventScript_RanFromArticuno::
+	setflag FLAG_ARTICUNO_FLED
+	setflag FLAG_HIDE_ARTICUNO
 	setvar VAR_0x8004, SPECIES_ARTICUNO
 	goto EventScript_MonFlewAway
 	end

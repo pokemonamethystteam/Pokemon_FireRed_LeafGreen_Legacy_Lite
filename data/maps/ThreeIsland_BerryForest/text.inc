@@ -41,3 +41,9 @@ ThreeIsland_BerryForest_Text_BewareWildBerryLovingMons::
     .string "Beware of wild, BERRY-loving\n"
     .string "POKéMON!$"
 
+ThreeIsland_BerryForest_Text_OldShrine::
+    .string "An old shrine.$"
+
+ThreeIsland_BerryForest_Text_OldShrineFlute::
+    .string "An old shrine.\p"
+    .string "Play the POKé FLUTE?$"

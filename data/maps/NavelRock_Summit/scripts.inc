@@ -15,7 +15,7 @@ NavelRock_Summit_EventScript_HideHoOh::
 
 NavelRock_Summit_EventScript_TryShowHoOh::
 	setvar VAR_TEMP_1, 1
-	goto_if_set FLAG_HO_OH_FLEW_AWAY, EventScript_Return
+	goto_if_set FLAG_HO_OH_FLED, EventScript_Return
 	setvar VAR_TEMP_1, 0
 	clearflag FLAG_HIDE_HO_OH
 	return
@@ -67,19 +67,68 @@ NavelRock_Summit_EventScript_HoOh::
 	goto_if_eq VAR_RESULT, B_OUTCOME_WON, NavelRock_Summit_EventScript_DefeatedHoOh
 	goto_if_eq VAR_RESULT, B_OUTCOME_RAN, NavelRock_Summit_EventScript_RanFromHoOh
 	goto_if_eq VAR_RESULT, B_OUTCOME_PLAYER_TELEPORTED, NavelRock_Summit_EventScript_RanFromHoOh
-	setflag FLAG_FOUGHT_HO_OH
+	goto_if_unset FLAG_MET_HO_OH, NavelRock_Summit_EventScript_ReleaseRoamers
 	releaseall
 	end
 
 NavelRock_Summit_EventScript_DefeatedHoOh::
-	setflag FLAG_HO_OH_FLEW_AWAY
+	setflag FLAG_HO_OH_FLED
 	setvar VAR_0x8004, SPECIES_HO_OH
-	goto EventScript_MonFlewAway
+	goto NavelRock_Summit_EventScript_MonFlewAway
+	goto_if_unset FLAG_MET_HO_OH, NavelRock_Summit_EventScript_ReleaseRoamers
+	releaseall
 	end
 
 NavelRock_Summit_EventScript_RanFromHoOh::
+	setflag FLAG_HO_OH_FLED
 	setvar VAR_0x8004, SPECIES_HO_OH
-	goto EventScript_MonFlewAway
+	goto NavelRock_Summit_EventScript_MonFlewAway
+	goto_if_unset FLAG_MET_HO_OH, NavelRock_Summit_EventScript_ReleaseRoamers
+	releaseall
+	end
+
+NavelRock_Summit_EventScript_MonFlewAway::
+    fadescreen FADE_TO_BLACK
+    removeobject LOCALID_NAVEL_ROCK_HO_OH
+    fadescreen FADE_FROM_BLACK
+    bufferspeciesname STR_VAR_1, VAR_0x8004
+    msgbox Text_MonFlewAway, MSGBOX_AUTOCLOSE
+	waitmessage
+	goto_if_unset FLAG_MET_HO_OH, NavelRock_Summit_EventScript_ReleaseRoamers
+	return
+
+NavelRock_Summit_EventScript_ReleaseRoamers::
+	special InitRoamer
+	delay 40
+	playmoncry SPECIES_RAIKOU, CRY_MODE_HIGH_PITCH
+	setvar VAR_0x8004, 1  @ vertical pan
+	setvar VAR_0x8005, 0  @ horizontal pan
+	setvar VAR_0x8006, 1  @ num shakes
+	setvar VAR_0x8007, 3  @ shake delay
+	special ShakeScreen
+	waitstate
+	waitmoncry
+	delay 20
+	playmoncry SPECIES_ENTEI, CRY_MODE_HIGH_PITCH
+	setvar VAR_0x8004, 1  @ vertical pan
+	setvar VAR_0x8005, 0  @ horizontal pan
+	setvar VAR_0x8006, 1  @ num shakes
+	setvar VAR_0x8007, 3  @ shake delay
+	special ShakeScreen
+	waitstate
+	waitmoncry
+	delay 20
+	playmoncry SPECIES_SUICUNE, CRY_MODE_HIGH_PITCH
+	setvar VAR_0x8004, 1  @ vertical pan
+	setvar VAR_0x8005, 0  @ horizontal pan
+	setvar VAR_0x8006, 1  @ num shakes
+	setvar VAR_0x8007, 3  @ shake delay
+	special ShakeScreen
+	waitstate
+	waitmoncry
+	clearflag FLAG_HIDE_LANCE_HOME
+	setflag FLAG_MET_HO_OH
+	releaseall
 	end
 
 Movement_CameraPanUp:

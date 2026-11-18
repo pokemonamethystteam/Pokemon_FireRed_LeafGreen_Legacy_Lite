@@ -412,4 +412,7 @@ const u16 *const gLevelUpLearnsets[NUM_SPECIES] =
     [SPECIES_JIRACHI] = sJirachiLevelUpLearnset,
     [SPECIES_DEOXYS] = sDeoxysLevelUpLearnset,
     [SPECIES_CHIMECHO] = sChimechoLevelUpLearnset,
+    [SPECIES_DEOXYS_SPEED] = sDeoxys_SpeedLevelUpLearnset,
+    [SPECIES_DEOXYS_ATTACK] = sDeoxys_AttackLevelUpLearnset,
+    [SPECIES_DEOXYS_DEFENSE] = sDeoxys_DefenseLevelUpLearnset,
 };

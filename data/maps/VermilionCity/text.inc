@@ -91,15 +91,26 @@ VermilionCity_Text_BoardSeagallopRainbowPass::
 
 VermilionCity_Text_OhMysticTicketTakeYouToNavelRock::
     .string "Oh! That's a MYSTICTICKET!\n"
-    .string "Now that is rare.\p"
+    .string "You must be the new CHAMPION!\p"
+    .string "It's an honor to work with you.\p"
+    .string "LANCE told us you would be coming,\n"
+    .string "so we already prepped for the\l"
+    .string "journey.\p"
     .string "We'll be happy to take you to\n"
     .string "NAVEL ROCK anytime.$"
 
 VermilionCity_Text_OhAuroraTicketTakeYouToBirthIsland::
     .string "Oh! That's an AURORATICKET!\n"
-    .string "Now that is rare.\p"
+    .string "Are you a researcher?\p"
     .string "We'll be happy to take you to\n"
     .string "BIRTH ISLAND anytime.$"
+
+VermilionCity_Text_OhAuroraTicketTakeYouToSouthernIsland::
+    .string "Oh! That's an EONTICKET!\n"
+    .string "The old man finally got a\l"
+    .string "replacement did he?\p"
+    .string "We'll be happy to take you to\n"
+    .string "SOUTHERN ISLAND anytime.$"
 
 VermilionCity_Text_BoardSeagallopFerry::
     .string "Would you like to board\n"

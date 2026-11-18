@@ -5,6 +5,18 @@ EventScript_SetDefeatedEliteFourFlagsVars::
 	specialvar VAR_RESULT, IsNationalPokedexEnabled
 	call_if_eq VAR_RESULT, FALSE, EventScript_SetReadyTryGiveNationalDexScene
 	call EventScript_ResetLegendaries
+	random 2
+	call_if_eq VAR_RESULT, 0 EventScript_SetReadyResetSnorlaxRoute12
+	call_if_eq VAR_RESULT, 1 EventScript_SetReadyResetSnorlaxRoute16
+	return
+
+EventScript_SetReadyResetSnorlaxRoute12::
+	clearflag FLAG_HIDE_ROUTE_12_SNORLAX
+	clearflag FLAG_WOKE_UP_ROUTE_12_SNORLAX
+	return
+
+EventScript_SetReadyResetSnorlaxRoute16::
+	clearflag FLAG_HIDE_ROUTE_16_SNORLAX
 	return
 
 EventScript_SetReadyTryGiveNationalDexScene::
@@ -12,11 +24,23 @@ EventScript_SetReadyTryGiveNationalDexScene::
 	return
 
 EventScript_ResetLegendaries::
-	clearflag FLAG_LUGIA_FLEW_AWAY
-	clearflag FLAG_HO_OH_FLEW_AWAY
-	clearflag FLAG_DEOXYS_FLEW_AWAY
-	clearflag FLAG_RAYQUAZA_FLEW_AWAY
-	clearflag FLAG_JIRACHI_FLEW_AWAY
+	clearflag FLAG_MEW_FLED
+	clearflag FLAG_MEWTWO_FLED
+	clearflag FLAG_ARTICUNO_FLED
+	clearflag FLAG_ZAPDOS_FLED
+	clearflag FLAG_MOLTRES_FLED
+	clearflag FLAG_LUGIA_FLED
+	clearflag FLAG_HO_OH_FLED
+	clearflag FLAG_DEOXYS_FLED
+	clearflag FLAG_RAYQUAZA_FLED
+	clearflag FLAG_KYOGRE_FLED
+	clearflag FLAG_GROUDON_FLED
+	clearflag FLAG_JIRACHI_FLED
+	clearflag FLAG_REGICE_FLED
+	clearflag FLAG_REGIROCK_FLED
+	clearflag FLAG_REGISTEEL_FLED
+	clearflag FLAG_LATIOS_FLED
+	clearflag FLAG_LATIAS_FLED
 	return
 
 EventScript_ResetEliteFourEnd::

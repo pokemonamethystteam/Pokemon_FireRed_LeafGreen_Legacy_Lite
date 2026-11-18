@@ -495,11 +495,11 @@
 #define TRAINER_YOUNG_COUPLE_LEA_JED             489
 #define TRAINER_SIS_AND_BRO_LIA_LUC              490
 #define TRAINER_SIS_AND_BRO_LIL_IAN              491
-#define TRAINER_BUG_CATCHER_VR_SAM                    492
-#define TRAINER_BEAUTY_VR_KATIE                    493
-#define TRAINER_BURGLAR_VR_JUSTIN                    494
-#define TRAINER_BLACK_BELT_VR_THOMAS                    495
-#define TRAINER_BUG_CATCHER_7                    496
+#define TRAINER_BUG_CATCHER_VR_SAM               492
+#define TRAINER_BEAUTY_VR_KATIE                  493
+#define TRAINER_BURGLAR_VR_LYN                   494
+#define TRAINER_BLACK_BELT_VR_THOMAS             495
+#define TRAINER_MTEMBER_JUSTIN                   496
 #define TRAINER_BUG_CATCHER_8                    497
 #define TRAINER_YOUNGSTER_BEN_3                  498
 #define TRAINER_YOUNGSTER_BEN_4                  499

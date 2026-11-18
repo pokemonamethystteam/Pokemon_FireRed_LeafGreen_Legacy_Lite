@@ -69,6 +69,12 @@
 #define MULTICHOICE_62                                         62
 #define MULTICHOICE_JOIN_OR_LEAD                               63
 #define MULTICHOICE_TRAINER_TOWER_MODE                         64
+#define MULTICHOICE_SEVII_SOUTH                                65
+#define MULTICHOICE_SEVII_NAVEL_SOUTH                          66
+#define MULTICHOICE_SEVII_BIRTH_SOUTH                          67
+#define MULTICHOICE_SEVII_NAVEL_BIRTH_SOUTH                    68
+#define MULTICHOICE_HELIX_DOME                                 69
+#define MULTICHOICE_HELIX_DOME_AMBER                           70
 
 #define MULTICHOICE_NONE                                      255
 

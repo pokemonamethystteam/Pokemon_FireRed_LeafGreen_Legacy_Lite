@@ -142,3 +142,17 @@ MtEmber_Exterior_Text_JocelynPostBattle::
     .string "The way you battle, it reminds me\n"
     .string "of the guy who dumped me…$"
 
+MtEmber_Summit_Text_JustinIntro::
+    .string "You think you're worthy of\n"
+    .string "summiting MT EMBER?\p"
+    .string "I'll be the judge of that!$"
+
+MtEmber_Summit_Text_JustinDefeat::
+    .string "Wow, you are strong!$"
+
+MtEmber_Summit_Text_JustinPostBattle::
+    .string "I'm here to stop people from\n"
+    .string "messing with the powerful\l"
+    .string "POKéMON that lives on this peak.\p"
+    .string "You're plenty strong, so go\n"
+    .string "right ahead.$"

@@ -6,10 +6,20 @@
 #define METATILE_Building_PCOn   0x063
 
 // gTileset_Cave
-#define METATILE_Cave_Floor_Ledge_Bottom  0x2E1
-#define METATILE_Cave_Floor_Ledge_Top     0x2D1
-#define METATILE_Cave_RockBarrier_Bottom  0x317
-#define METATILE_Cave_RockBarrier_Top     0x307
+#define METATILE_Cave_CornerBottomLeft        0x29A
+#define METATILE_Cave_CornerBottomRight       0x298
+#define METATILE_Cave_CornerInnerRight        0x29B
+#define METATILE_Cave_CornerTopLeft           0x28A
+#define METATILE_Cave_CornerTopRight          0x288
+#define METATILE_Cave_Floor_Ledge_Bottom      0x2E1
+#define METATILE_Cave_Floor_Ledge_Top         0x2D1
+#define METATILE_Cave_Ground                  0x281
+#define METATILE_Cave_RockBarrier_Bottom      0x317
+#define METATILE_Cave_RockBarrier_Top         0x307
+#define METATILE_Cave_SmallRocks              0x283
+#define METATILE_Cave_WallBottom              0x299
+#define METATILE_Cave_WallTop                 0x289
+#define METATILE_Cave_WallTopCornerInnerLeft  0x2A4
 
 // gTileset_CeladonCity
 #define METATILE_CeladonCity_CyclingRoad_Grass  0x352
@@ -35,6 +45,15 @@
 // gTileset_DepartmentStore
 #define METATILE_DepartmentStore_ElevatorDoor  0x28D
 
+// gTileset_DiglettsCave
+#define METATILE_DiglettsCave_BottomCornerLeft   0x298
+#define METATILE_DiglettsCave_BottomCornerRight  0x29A
+#define METATILE_DiglettsCave_BottomWall         0x299
+#define METATILE_DiglettsCave_Ground             0x281
+#define METATILE_DiglettsCave_LeftWall           0x290
+#define METATILE_DiglettsCave_RightWall          0x292
+#define METATILE_DiglettsCave_TopCornerLeft      0x288
+
 // gTileset_FuchsiaCity
 #define METATILE_FuchsiaCity_Door                           0x2BF
 #define METATILE_FuchsiaCity_SafariZoneDoor                 0x2D2
@@ -58,6 +77,7 @@
 
 // gTileset_General
 #define METATILE_General_CalmWater               0x12B
+#define METATILE_General_CaveEntrance            0x0A9
 #define METATILE_General_Door                    0x03D
 #define METATILE_General_Plain_Grass             0x00D
 #define METATILE_General_Plain_Mowed             0x001
@@ -73,6 +93,9 @@
 // gTileset_GenericBuilding1
 #define METATILE_GenericBuilding1_PlayersPCOff  0x28F
 #define METATILE_GenericBuilding1_PlayersPCOn   0x28A
+
+// gTileset_GenericBuilding2
+#define METATILE_GenericBuilding2_LanceTable  0x33D
 
 // gTileset_LavenderTown
 #define METATILE_LavenderTown_Door  0x2A2
@@ -168,7 +191,12 @@
 #define METATILE_PokemonMansion_Wall_EndPost_Mid                         0x2A5
 
 // gTileset_RockTunnel
-#define METATILE_RockTunnel_DirtGround  0x281
+#define METATILE_RockTunnel_DirtGround         0x281
+#define METATILE_RockTunnel_Ladder             0x285
+#define METATILE_RockTunnel_WallBottom         0x299
+#define METATILE_RockTunnel_WallCornerLeft     0x29A
+#define METATILE_RockTunnel_WallTop            0x289
+#define METATILE_RockTunnel_WallTopCornerLeft  0x28A
 
 // gTileset_SSAnne
 #define METATILE_SSAnne_Door  0x281

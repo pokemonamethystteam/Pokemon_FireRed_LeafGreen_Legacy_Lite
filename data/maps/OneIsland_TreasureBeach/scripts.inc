@@ -1,5 +1,33 @@
 OneIsland_TreasureBeach_MapScripts::
+	map_script MAP_SCRIPT_ON_LOAD, OneIsland_TreasureBeach_OnLoad
+	map_script MAP_SCRIPT_ON_TRANSITION, OneIsland_TreasureBeach_OnTransition
 	.byte 0
+
+OneIsland_TreasureBeach_OnLoad::
+	goto_if_eq VAR_GROUDON_LOCATION, 1, OneIsland_TreasureBeach_EventScript_SetUpMoltenCave
+	clearflag FLAG_HIDE_GROUDON_NPC
+	end
+
+OneIsland_TreasureBeach_EventScript_SetUpMoltenCave::
+	setmetatile 16, 22, METATILE_General_CaveEntrance, 0
+	goto_if_set FLAG_CAUGHT_GROUDON, OneIsland_TreasureBeach_EventScript_SetUpMoltenCaveClearGroudon
+	goto_if_set FLAG_GROUDON_FLED, OneIsland_TreasureBeach_EventScript_SetUpMoltenCaveClearGroudon
+	clearflag FLAG_HIDE_GROUDON
+	setflag FLAG_HIDE_GROUDON_NPC
+OneIsland_TreasureBeach_EventScript_SetUpMoltenCaveClearGroudon::
+	clearflag FLAG_HIDE_GROUDON_NPC
+	end
+
+OneIsland_TreasureBeach_OnTransition::
+	goto_if_eq VAR_GROUDON_LOCATION, 1, OneIsland_TreasureBeach_EventScript_TestWeather
+	end
+
+OneIsland_TreasureBeach_EventScript_TestWeather::
+	goto_if_set FLAG_CAUGHT_GROUDON, OneIsland_TreasureBeach_EventScript_SetUpMoltenCaveClearGroudon
+	goto_if_set FLAG_GROUDON_FLED, OneIsland_TreasureBeach_EventScript_SetUpMoltenCaveClearGroudon
+	setweather WEATHER_DROUGHT
+	removeobject LOCAL_ID_TREASURE_WITNESS
+	end
 
 OneIsland_TreasureBeach_EventScript_Boy::
 	msgbox OneIsland_TreasureBeach_Text_GoodThingsWashUpOnBeach, MSGBOX_NPC

@@ -27,7 +27,21 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "FLAG_HIDE_JIRACHI_MAN_CAVE",
+      "script": "NULL",
+      "flag": "FLAG_HIDE_JIRACHI_MAN_CAVE"
+    },
+    {
+      "type": "object",
+      "graphics_id": "OBJ_EVENT_GFX_SCIENTIST",
+      "x": 6,
+      "y": 16,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
+      "movement_range_x": 2,
+      "movement_range_y": 2,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "SixIsland_AlteringCave_EventScript_Scientist",
       "flag": "0"
     }
   ],
@@ -47,6 +61,25 @@
       "dest_warp_id": "0"
     }
   ],
-  "coord_events": [],
+  "coord_events": [
+    {
+      "type": "trigger",
+      "x": 26,
+      "y": 13,
+      "elevation": 0,
+      "var": "VAR_TEMP_0",
+      "var_value": "0",
+      "script": "SixIsland_AlteringCave_EventScript_OldManEventTrigger1"
+    },
+    {
+      "type": "trigger",
+      "x": 27,
+      "y": 13,
+      "elevation": 0,
+      "var": "VAR_TEMP_0",
+      "var_value": "0",
+      "script": "SixIsland_AlteringCave_EventScript_OldManEventTrigger2"
+    }
+  ],
   "bg_events": []
 }

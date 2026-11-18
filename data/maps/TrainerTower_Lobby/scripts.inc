@@ -140,6 +140,37 @@ TrainerTower_Lobby_Mart_Items::
 	release
 	end
 
+TrainerTower_Lobby_EventScript_MartClerk2::
+	goto_if_questlog EventScript_ReleaseEnd
+	lock
+	faceplayer
+	message Text_MayIHelpYou
+	waitmessage
+	pokemart TrainerTower_Lobby_Mart_Items2
+	msgbox Text_PleaseComeAgain
+	release
+	end
+
+	.align 2
+TrainerTower_Lobby_Mart_Items2::
+	.2byte ITEM_KINGS_ROCK
+	.2byte ITEM_DEEP_SEA_TOOTH
+	.2byte ITEM_DEEP_SEA_SCALE
+	.2byte ITEM_METAL_COAT
+	.2byte ITEM_DRAGON_SCALE
+	.2byte ITEM_UP_GRADE
+	.2byte ITEM_BRICK_PIECE
+	.2byte ITEM_MACHO_BRACE
+	.2byte ITEM_SOOTHE_BELL
+	.2byte ITEM_CHOICE_BAND
+	.2byte ITEM_FOCUS_BAND
+	.2byte ITEM_SCOPE_LENS
+	.2byte ITEM_LEFTOVERS
+	.2byte ITEM_SHELL_BELL
+	.2byte ITEM_NONE
+	release
+	end
+
 TrainerTower_Lobby_EventScript_EntryTrigger::
 	lockall
 	applymovement LOCALID_PLAYER, TrainerTower_Lobby_Movement_FaceReceptionist
@@ -219,4 +250,15 @@ TrainerTower_Lobby_EventScript_CooltrainerF::
 
 TrainerTower_Lobby_EventScript_BaldingMan::
 	msgbox TrainerTower_Lobby_Text_StairsTougherThanAnyBattle, MSGBOX_NPC
+	end
+
+TrainerTower_Lobby_EventScript_Gentleman::
+	lock
+	faceplayer
+	goto_if_set FLAG_RECEIVED_DIVE, TrainerTower_Lobby_EventScript_GentlemanEnd
+	msgbox TrainerTower_Lobby_Text_YoullNeedAllTheHelp, MSGBOX_NPC
+	giveitem ITEM_HM08_DIVE
+TrainerTower_Lobby_EventScript_GentlemanEnd::
+	msgbox TrainerTower_Lobby_Text_WaterCurrents, MSGBOX_NPC
+	release
 	end

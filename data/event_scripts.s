@@ -462,6 +462,7 @@ gStdScriptsEnd::
 	.include "data/maps/Route19_UnusedHouse/scripts.inc"
 	.include "data/maps/Route22_NorthEntrance/scripts.inc"
 	.include "data/maps/Route23_UnusedHouse/scripts.inc"
+	.include "data/maps/Route23_UnusedHouse/text.inc"
 	.include "data/maps/Route25_SeaCottage/scripts.inc"
 	.include "data/maps/SevenIsland_House_Room1/scripts.inc"
 	.include "data/maps/SevenIsland_House_Room2/scripts.inc"
@@ -990,7 +991,7 @@ Text_TheDoorIsOpen::
 	.include "data/text/poke_mart.inc"
 
 Text_MonFlewAway::
-	.string "The {STR_VAR_1} flew away!$"
+	.string "The {STR_VAR_1} fled!$"
 
 Text_TheresBedLetsRest::
 	.string "ベッドが　ある‥‥\n"
@@ -1011,6 +1012,7 @@ Text_MoveCanOnlyBeLearnedOnce::
 	.string "once. Is that okay?$"
 
 EventScript_ResetAllMapFlags::
+	setflag FLAG_ROUTE1_PROF_OAK_DEFEATED	
 	setflag FLAG_HIDE_OAK_IN_HIS_LAB
 	setflag FLAG_HIDE_OAK_IN_PALLET_TOWN
 	setflag FLAG_HIDE_BILL_HUMAN_SEA_COTTAGE
@@ -1133,6 +1135,9 @@ EventScript_BagItemCanBeRegistered::
 
 EventScript_Return::
 	return
+
+EventScript_End::
+	end
 
 EventScript_SetResultTrue::
 	setvar VAR_RESULT, TRUE
@@ -1366,3 +1371,18 @@ Text_TestMsg::
 
 	.include "data/maps/SixIsland_AlteringCave_JirachiRoom/scripts.inc"
 	.include "data/maps/SixIsland_AlteringCave_JirachiRoom/text.inc"
+
+	.include "data/maps/MoltenCave/scripts.inc"
+	.include "data/maps/MoltenCave/text.inc"
+
+	.include "data/maps/SouthernIsland_Exterior/scripts.inc"
+	.include "data/maps/SouthernIsland_Exterior/text.inc"
+
+	.include "data/maps/SouthernIsland_Interior/scripts.inc"
+	.include "data/maps/SouthernIsland_Interior/text.inc"
+
+	.include "data/maps/SouthernIsland_Harbor/scripts.inc"
+	.include "data/maps/SouthernIsland_Harbor/text.inc"
+
+	.include "data/maps/Route23_LanceStudy/scripts.inc"
+	.include "data/maps/Route23_LanceStudy/text.inc"

@@ -22,6 +22,7 @@ Route25_SeaCottage_EventScript_SetReturnedAfterSSTicket::
 Route25_SeaCottage_EventScript_Bill::
 	lock
 	faceplayer
+	goto_if_set FLAG_CAUGHT_DEOXYS, Route25_SeaCottage_EventScript_BillDeoxysFormChange
 	goto_if_set RETURN_AFTER_SS_TICKET, Route25_SeaCottage_EventScript_BillGoLookAtPC
 	goto_if_set FLAG_GOT_SS_TICKET, Route25_SeaCottage_EventScript_BillGoToSSAnne
 	goto_if_set FLAG_HELPED_BILL_IN_SEA_COTTAGE, Route25_SeaCottage_EventScript_BillGiveSSTicket
@@ -60,6 +61,57 @@ Route25_SeaCottage_EventScript_BillAskForHelp::
 	setflag BILL_IN_TELEPORTER
 	release
 	end
+
+Route25_SeaCottage_EventScript_BillDeoxysFormChange::
+	goto_if_set FLAG_SHOWN_BILL_DEOXYS, Route25_SeaCottage_EventScript_ChangeDeoxysForm2
+	setflag FLAG_SHOWN_BILL_DEOXYS
+	msgbox Route25_SeaCottage_Text_CozmoSurprised, MSGBOX_DEFAULT
+Route25_SeaCottage_EventScript_ChangeDeoxysForm2::
+	msgbox ChangeDeoxysForm_Text_Beginning, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, YES ChangeDeoxysForm_Start
+ChangeDeoxysForm_End:
+	msgbox ChangeDeoxysForm_Text_End, MSGBOX_DEFAULT
+	releaseall
+	end
+
+ChangeDeoxysForm_Start:
+	msgbox ChangeDeoxysForm_Text_Select, MSGBOX_DEFAULT
+	special ChoosePartyMon
+	waitstate
+	goto_if_eq VAR_0x8004, 255, ChangeDeoxysForm_End
+	special TryChangeDeoxysForm
+	faceplayer
+	goto_if_eq VAR_RESULT, TRUE ChangeDeoxysForm_Success
+	goto ChangeDeoxysForm_End
+
+ChangeDeoxysForm_Success:
+	playmoncry SPECIES_DEOXYS, 0
+	msgbox ChangeDeoxysForm_Text_Success, MSGBOX_DEFAULT
+	waitmoncry
+	goto ChangeDeoxysForm_End
+
+ChangeDeoxysForm_Text_Beginning:
+	.string "Would you like to see what happens if\n"
+	.string "we expose it to this meteorite?$"
+
+ChangeDeoxysForm_Text_End:
+	.string "Come back anytime.$"
+
+ChangeDeoxysForm_Text_Select:
+	.string "Show me your DEOXYS.$"
+
+ChangeDeoxysForm_Text_Success:
+	.string "The experiment was a success!\nYour DEOXYS has transformed!$"
+
+Route25_SeaCottage_Text_CozmoSurprised:
+	.string "PROF. COZMO: Incredible! You caught\n"
+	.string "DEOXYS, didn't you?\p"
+	.string "I've been studying the METEORITE while\n"
+	.string "you were away, and I think there's a\l"
+	.string "strange connection between it and\l"
+	.string "DEOXYS.\p"
+	.string "Can you feel it? It’s as if they…\n"
+	.string "resonate.$"
 
 @ Just returns after message, execution continues as if player had said yes
 Route25_SeaCottage_EventScript_DeclineHelpBill::

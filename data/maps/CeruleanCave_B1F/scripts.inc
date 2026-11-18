@@ -14,12 +14,18 @@ CeruleanCave_B1F_EventScript_TryRemoveMewtwo::
 	return
 
 CeruleanCave_B1F_OnTransition::
-	call_if_unset FLAG_FOUGHT_MEWTWO, CeruleanCave_B1F_EventScript_ShowMewtwo
+	call_if_unset FLAG_FOUGHT_MEWTWO, CeruleanCave_B1F_EventScript_ShowMewtwoTest
+	setflag FLAG_HIDE_MEWTWO
+	end
+
+CeruleanCave_B1F_EventScript_ShowMewtwoTest::
+	call_if_unset FLAG_MEWTWO_FLED, CeruleanCave_B1F_EventScript_ShowMewtwo
+	setflag FLAG_HIDE_MEWTWO
 	end
 
 CeruleanCave_B1F_EventScript_ShowMewtwo::
 	clearflag FLAG_HIDE_MEWTWO
-	return
+	end
 
 CeruleanCave_B1F_EventScript_Mewtwo::
 	goto_if_questlog EventScript_ReleaseEnd
@@ -40,19 +46,17 @@ CeruleanCave_B1F_EventScript_Mewtwo::
 	waitstate
 	clearflag FLAG_SYS_SPECIAL_WILD_BATTLE
 	specialvar VAR_RESULT, GetBattleOutcome
-	goto_if_eq VAR_RESULT, B_OUTCOME_WON, CeruleanCave_B1F_EventScript_DefeatedMewtwo
+	goto_if_eq VAR_RESULT, B_OUTCOME_WON, CeruleanCave_B1F_EventScript_RanFromMewtwo
 	goto_if_eq VAR_RESULT, B_OUTCOME_RAN, CeruleanCave_B1F_EventScript_RanFromMewtwo
 	goto_if_eq VAR_RESULT, B_OUTCOME_PLAYER_TELEPORTED, CeruleanCave_B1F_EventScript_RanFromMewtwo
+	setflag FLAG_HIDE_MEWTWO
 	setflag FLAG_FOUGHT_MEWTWO
 	release
 	end
 
-CeruleanCave_B1F_EventScript_DefeatedMewtwo::
-	setflag FLAG_FOUGHT_MEWTWO
-	goto EventScript_RemoveStaticMon
-	end
-
 CeruleanCave_B1F_EventScript_RanFromMewtwo::
+	setflag FLAG_HIDE_MEWTWO
+	setflag FLAG_MEWTWO_FLED
 	setvar VAR_0x8004, SPECIES_MEWTWO
 	goto EventScript_MonFlewAway
 	end

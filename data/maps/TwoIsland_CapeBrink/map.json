@@ -28,6 +28,13 @@
       "elevation": 0,
       "dest_map": "MAP_TWO_ISLAND_CAPE_BRINK_HOUSE",
       "dest_warp_id": "0"
+    },
+    {
+      "x": 16,
+      "y": 25,
+      "elevation": 0,
+      "dest_map": "MAP_MOLTEN_CAVE",
+      "dest_warp_id": "0"
     }
   ],
   "coord_events": [],

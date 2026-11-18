@@ -52,12 +52,22 @@ CeladonCity_DepartmentStore_2F_EventScript_ClerkTMs::
 
 	.align 2
 CeladonCity_DepartmentStore_2F_TMs::
-	.2byte ITEM_TM05
-	.2byte ITEM_TM15
-	.2byte ITEM_TM28
-	.2byte ITEM_TM31
-	.2byte ITEM_TM43
-	.2byte ITEM_TM45
+	.2byte ITEM_TM05_ROAR
+	.2byte ITEM_TM07_HAIL
+	.2byte ITEM_TM08_BULK_UP
+	.2byte ITEM_TM11_SUNNY_DAY
+	.2byte ITEM_TM12_TAUNT
+	.2byte ITEM_TM16_LIGHT_SCREEN
+	.2byte ITEM_TM17_PROTECT
+	.2byte ITEM_TM18_RAIN_DANCE
+	.2byte ITEM_TM20_SAFEGUARD
+	.2byte ITEM_TM33_REFLECT
+	.2byte ITEM_TM37_SANDSTORM
+	.2byte ITEM_TM41_TORMENT
+	.2byte ITEM_TM44_REST
+	.2byte ITEM_TM45_ATTRACT
+	.2byte ITEM_TM48_SKILL_SWAP
+	.2byte ITEM_TM49_SNATCH
 	.2byte ITEM_NONE
 	release
 	end

@@ -60,3 +60,79 @@ ThreeIsland_BerryForest_EventScript_WelcomeSign::
 ThreeIsland_BerryForest_EventScript_BewareSign::
 	msgbox ThreeIsland_BerryForest_Text_BewareWildBerryLovingMons, MSGBOX_SIGN
 	end
+
+ThreeIsland_BerryForest_EventScript_Celebi::
+	lock
+	goto_if_set FLAG_CELEBI_FLED, ThreeIsland_BerryForest_EventScript_AnOldShrine
+	goto_if_set FLAG_CAUGHT_CELEBI, ThreeIsland_BerryForest_EventScript_AnOldShrine
+	msgbox ThreeIsland_BerryForest_Text_OldShrineFlute, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, NO, EventScript_ReleaseEnd
+    message Text_PlayedPokeFlute
+    waitmessage
+	special Script_FadeOutMapMusic
+    playfanfare MUS_POKE_FLUTE
+	delay 80
+	fadescreen FADE_TO_WHITE
+    removeobject LOCALID_CELEBI
+	setobjectxyperm LOCALID_CELEBI, 17, 3
+	addobject LOCALID_CELEBI
+	applymovement LOCALID_CELEBI, ThreeIsland_BerryForest_Movement_Levitate
+	fadescreen FADE_FROM_WHITE
+	delay 80
+	fadescreen FADE_TO_WHITE
+    removeobject LOCALID_CELEBI
+	setobjectxyperm LOCALID_CELEBI, 12, 4
+	addobject LOCALID_CELEBI
+	fadescreen FADE_FROM_WHITE
+	delay 80
+	fadescreen FADE_TO_WHITE
+    removeobject LOCALID_CELEBI
+	setobjectxyperm LOCALID_CELEBI, 13, 5
+	addobject LOCALID_CELEBI
+	fadescreen FADE_FROM_WHITE
+	delay 120
+	playmoncry SPECIES_CELEBI, CRY_MODE_ENCOUNTER
+	delay 40
+	seteventmon SPECIES_CELEBI, 30
+	setflag FLAG_SYS_SPECIAL_WILD_BATTLE
+	special StartLegendaryBattle
+	waitstate
+	clearflag FLAG_SYS_SPECIAL_WILD_BATTLE
+	specialvar VAR_RESULT, GetBattleOutcome
+	goto_if_eq VAR_RESULT, B_OUTCOME_WON, ThreeIsland_BerryForest_EventScript_DefeatedCelebi
+	goto_if_eq VAR_RESULT, B_OUTCOME_RAN, ThreeIsland_BerryForest_EventScript_DefeatedCelebi
+	goto_if_eq VAR_RESULT, B_OUTCOME_PLAYER_TELEPORTED, ThreeIsland_BerryForest_EventScript_DefeatedCelebi
+	setflag FLAG_CAUGHT_CELEBI
+	setflag FLAG_HIDE_CELEBI
+    fadescreen FADE_TO_BLACK
+    removeobject LOCALID_CELEBI
+	setobjectxyperm LOCALID_CELEBI, 56, 46
+    fadescreen FADE_FROM_BLACK
+	release
+	end
+
+ThreeIsland_BerryForest_EventScript_AnOldShrine::
+	msgbox ThreeIsland_BerryForest_Text_OldShrine
+	release
+	end
+
+ThreeIsland_BerryForest_EventScript_DefeatedCelebi::
+	setflag FLAG_CELEBI_FLED
+	setvar VAR_0x8004, SPECIES_CELEBI
+	goto ThreeIsland_BerryForest_EventScript_MonFlewAway
+	end
+
+ThreeIsland_BerryForest_EventScript_MonFlewAway::
+	setflag FLAG_HIDE_CELEBI
+    fadescreen FADE_TO_BLACK
+    removeobject LOCALID_CELEBI
+	setobjectxyperm LOCALID_CELEBI, 56, 46
+    fadescreen FADE_FROM_BLACK
+    bufferspeciesname STR_VAR_1, VAR_0x8004
+    msgbox Text_MonFlewAway, MSGBOX_AUTOCLOSE
+    release
+    end
+
+ThreeIsland_BerryForest_Movement_Levitate:
+	levitate
+	step_end

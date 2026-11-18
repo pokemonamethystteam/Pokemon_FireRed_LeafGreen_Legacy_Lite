@@ -16,7 +16,7 @@
   "connections": [
     {
       "map": "MAP_FIVE_ISLAND_WATER_LABYRINTH",
-      "offset": -48,
+      "offset": -49,
       "direction": "down"
     }
   ],

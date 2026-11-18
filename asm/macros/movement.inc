@@ -168,6 +168,9 @@
 	create_movement_action glide_up, MOVEMENT_ACTION_GLIDE_UP
 	create_movement_action glide_left, MOVEMENT_ACTION_GLIDE_LEFT
 	create_movement_action glide_right, MOVEMENT_ACTION_GLIDE_RIGHT
+	create_movement_action levitate, MOVEMENT_ACTION_LEVITATE
+	create_movement_action stop_levitate, MOVEMENT_ACTION_STOP_LEVITATE
+	create_movement_action destroy_extra_task, MOVEMENT_ACTION_STOP_LEVITATE_AT_TOP
 	create_movement_action fly_up, MOVEMENT_ACTION_FLY_UP
 	create_movement_action fly_down, MOVEMENT_ACTION_FLY_DOWN
 	create_movement_action jump_special_with_effect_down, MOVEMENT_ACTION_JUMP_SPECIAL_WITH_EFFECT_DOWN

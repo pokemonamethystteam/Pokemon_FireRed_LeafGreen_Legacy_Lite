@@ -1963,9 +1963,9 @@ static u8 CheckValidityOfTradeMons(u8 *aliveMons, u8 playerPartyCount, u8 cursor
 
     // Partner cant trade illegitimate Deoxys or Mew
     partnerSpecies = GetMonData(&gEnemyParty[sTradeMenu->partnerCursorPosition % PARTY_SIZE], MON_DATA_SPECIES);
-    if ((partnerSpecies == SPECIES_DEOXYS || partnerSpecies == SPECIES_MEW)
-        && !GetMonData(&gEnemyParty[sTradeMenu->partnerCursorPosition % PARTY_SIZE], MON_DATA_MODERN_FATEFUL_ENCOUNTER))
-        return PARTNER_MON_INVALID;
+    //if ((partnerSpecies == SPECIES_DEOXYS || partnerSpecies == SPECIES_MEW)
+    //    && !GetMonData(&gEnemyParty[sTradeMenu->partnerCursorPosition % PARTY_SIZE], MON_DATA_MODERN_FATEFUL_ENCOUNTER))
+    //    return PARTNER_MON_INVALID;
 
     if (hasLiveMon != 0)
         hasLiveMon = BOTH_MONS_VALID;
@@ -2792,11 +2792,11 @@ static u32 CanTradeSelectedMon(struct Pokemon * playerParty, int partyCount, int
         }
     }
 
-    if (species[monIdx] == SPECIES_DEOXYS || species[monIdx] == SPECIES_MEW)
-    {
-        if (!GetMonData(&playerParty[monIdx], MON_DATA_MODERN_FATEFUL_ENCOUNTER))
-            return CANT_TRADE_INVALID_MON;
-    }
+    //if (species[monIdx] == SPECIES_DEOXYS || species[monIdx] == SPECIES_MEW)
+    //{
+    //    if (!GetMonData(&playerParty[monIdx], MON_DATA_MODERN_FATEFUL_ENCOUNTER))
+    //        return CANT_TRADE_INVALID_MON;
+    //}
 
     // Make Eggs not count for numMonsLeft
     for (i = 0; i < partyCount; i++)

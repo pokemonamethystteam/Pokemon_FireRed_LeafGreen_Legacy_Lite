@@ -1,7 +1,9 @@
 #include "global.h"
+#include "malloc.h"
 #include "gflib.h"
 #include "event_data.h"
 #include "event_object_movement.h"
+#include "event_scripts.h"
 #include "field_camera.h"
 #include "field_control_avatar.h"
 #include "field_effect.h"
@@ -14,7 +16,9 @@
 #include "random.h"
 #include "script.h"
 #include "trainer_see.h"
+#include "task.h"
 #include "trig.h"
+#include "util.h"
 #include "constants/maps.h"
 #include "constants/event_object_movement.h"
 #include "constants/event_objects.h"
@@ -154,6 +158,10 @@ static void MovementType_RaiseHandAndStop(struct Sprite *);
 static void MovementType_RaiseHandAndJump(struct Sprite *);
 static void MovementType_RaiseHandAndSwim(struct Sprite *);
 static void MovementType_WanderAroundSlower(struct Sprite *);
+static void MovementType_WalkSlowlyInPlace(struct Sprite *);
+static void ApplyLevitateMovement(u8);
+static void CreateLevitateMovementTask(struct ObjectEvent *);
+static void DestroyLevitateMovementTask(u8);
 
 enum {
     MOVE_SPEED_NORMAL, // walking
@@ -309,6 +317,10 @@ static void (*const sMovementTypeCallbacks[MOVEMENT_TYPES_COUNT])(struct Sprite 
     [MOVEMENT_TYPE_RAISE_HAND_AND_JUMP]                   = MovementType_RaiseHandAndJump,
     [MOVEMENT_TYPE_RAISE_HAND_AND_SWIM]                   = MovementType_RaiseHandAndSwim,
     [MOVEMENT_TYPE_WANDER_AROUND_SLOWER]                  = MovementType_WanderAroundSlower,
+    [MOVEMENT_TYPE_WALK_SLOWLY_IN_PLACE_DOWN] = MovementType_WalkSlowlyInPlace,
+    [MOVEMENT_TYPE_WALK_SLOWLY_IN_PLACE_UP] = MovementType_WalkSlowlyInPlace,
+    [MOVEMENT_TYPE_WALK_SLOWLY_IN_PLACE_LEFT] = MovementType_WalkSlowlyInPlace,
+    [MOVEMENT_TYPE_WALK_SLOWLY_IN_PLACE_RIGHT] = MovementType_WalkSlowlyInPlace,
 };
 
 static const bool8 gRangedMovementTypes[MOVEMENT_TYPES_COUNT] = {
@@ -438,6 +450,10 @@ static const u8 gInitialMovementTypeFacingDirections[MOVEMENT_TYPES_COUNT] = {
     [MOVEMENT_TYPE_RAISE_HAND_AND_JUMP] = DIR_SOUTH,
     [MOVEMENT_TYPE_RAISE_HAND_AND_SWIM] = DIR_SOUTH,
     [MOVEMENT_TYPE_WANDER_AROUND_SLOWER] = DIR_SOUTH,
+    [MOVEMENT_TYPE_WALK_SLOWLY_IN_PLACE_DOWN] = DIR_SOUTH,
+    [MOVEMENT_TYPE_WALK_SLOWLY_IN_PLACE_UP] = DIR_NORTH,
+    [MOVEMENT_TYPE_WALK_SLOWLY_IN_PLACE_LEFT] = DIR_WEST,
+    [MOVEMENT_TYPE_WALK_SLOWLY_IN_PLACE_RIGHT] = DIR_EAST,
 };
 
 #define OBJ_EVENT_PAL_TAG_PLAYER_RED                  0x1100
@@ -2777,6 +2793,16 @@ static bool8 MovementType_WanderAround_Step6(struct ObjectEvent *objectEvent, st
         sprite->data[1] = 1;
     }
     return FALSE;
+}
+
+movement_type_def(MovementType_WalkSlowlyInPlace, gMovementTypeFuncs_WalkSlowlyInPlace)
+
+bool8 MovementType_WalkSlowlyInPlace_Step0(struct ObjectEvent *objectEvent, struct Sprite *sprite)
+{
+    ClearObjectEventMovement(objectEvent, sprite);
+    ObjectEventSetSingleMovement(objectEvent, sprite, GetWalkInPlaceSlowMovementAction(objectEvent->facingDirection));
+    sprite->data[1] = 1;
+    return TRUE;
 }
 
 bool8 ObjectEventIsTrainerAndCloseToPlayer(struct ObjectEvent *objectEvent)
@@ -7920,6 +7946,32 @@ static bool8 MovementAction_PauseSpriteAnim(struct ObjectEvent *objectEvent, str
     return TRUE;
 }
 
+bool8 MovementAction_Levitate_Step0(struct ObjectEvent *objectEvent, struct Sprite *sprite)
+{
+    CreateLevitateMovementTask(objectEvent);
+    sprite->data[2] = 1;
+    return TRUE;
+}
+
+bool8 MovementAction_StopLevitate_Step0(struct ObjectEvent *objectEvent, struct Sprite *sprite)
+{
+    DestroyLevitateMovementTask(objectEvent->warpArrowSpriteId);
+    sprite->y2 = 0;
+    sprite->data[2] = 1;
+    return TRUE;
+}
+
+bool8 MovementAction_StopLevitateAtTop_Step0(struct ObjectEvent *objectEvent, struct Sprite *sprite)
+{
+    if (sprite->y2 == 0)
+    {
+        DestroyLevitateMovementTask(objectEvent->warpArrowSpriteId);
+        sprite->data[2] = 1;
+        return TRUE;
+    }
+    return FALSE;
+}
+
 static bool8 MovementAction_FlyUp_Step0(struct ObjectEvent *objectEvent, struct Sprite *sprite)
 {
     sprite->y2 = 0;
@@ -8776,6 +8828,43 @@ static void DoGroundEffects_OnFinishStep(struct ObjectEvent *objEvent, struct Sp
         objEvent->triggerGroundEffectsOnStop = 0;
         objEvent->landingJump = 0;
     }
+}
+
+static void CreateLevitateMovementTask(struct ObjectEvent *objectEvent)
+{
+    u8 taskId = CreateTask(ApplyLevitateMovement, 0xFF);
+    struct Task *task = &gTasks[taskId];
+
+    StoreWordInTwoHalfwords(&task->data[0], (u32)objectEvent);
+    objectEvent->warpArrowSpriteId = taskId;
+    task->data[3] = 0xFFFF;
+}
+
+static void ApplyLevitateMovement(u8 taskId)
+{
+    struct ObjectEvent *objectEvent;
+    struct Sprite *sprite;
+    struct Task *task = &gTasks[taskId];
+
+    LoadWordFromTwoHalfwords(&task->data[0], (u32 *)&objectEvent); // load the map object pointer.
+    sprite = &gSprites[objectEvent->spriteId];
+
+    if(!(task->data[2] & 3))
+        sprite->y2 += task->data[3];
+
+    if(!(task->data[2] & 15))
+        task->data[3] = -task->data[3];
+
+    task->data[2]++;
+}
+
+static void DestroyLevitateMovementTask(u8 taskId)
+{
+    struct ObjectEvent *objectEvent;
+    struct Task *task = &gTasks[taskId];
+
+    LoadWordFromTwoHalfwords(&task->data[0], (u32 *)&objectEvent); // unused objectEvent
+    DestroyTask(taskId);
 }
 
 bool8 FreezeObjectEvent(struct ObjectEvent *objectEvent)

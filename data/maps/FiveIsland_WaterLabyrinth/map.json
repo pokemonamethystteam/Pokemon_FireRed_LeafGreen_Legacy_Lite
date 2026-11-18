@@ -16,20 +16,21 @@
   "connections": [
     {
       "map": "MAP_FIVE_ISLAND_RESORT_GORGEOUS",
-      "offset": 48,
+      "offset": 49,
       "direction": "up"
     },
     {
       "map": "MAP_FIVE_ISLAND",
-      "offset": 48,
+      "offset": 49,
       "direction": "down"
     }
   ],
   "object_events": [
     {
+      "local_id": "LOCAL_ID_LABYRINTH_WITNESS_2",
       "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_GENTLEMAN",
-      "x": 14,
+      "x": 15,
       "y": 11,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
@@ -38,12 +39,13 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "FiveIsland_WaterLabyrinth_EventScript_EggGentleman",
-      "flag": "0"
+      "flag": "FLAG_HIDE_KYOGRE_NPC"
     },
     {
+      "local_id": "LOCAL_ID_LABYRINTH_WITNESS_1",
       "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_WOMAN_2",
-      "x": 9,
+      "x": 10,
       "y": 7,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
@@ -52,10 +54,67 @@
       "trainer_type": "TRAINER_TYPE_NORMAL",
       "trainer_sight_or_berry_tree_id": "1",
       "script": "FiveIsland_WaterLabyrinth_EventScript_Alize",
-      "flag": "0"
+      "flag": "FLAG_HIDE_KYOGRE_NPC"
+    },
+    {
+      "local_id": "LOCAL_ID_KYOGRE_LABYRINTH",
+      "type": "object",
+      "graphics_id": "OBJ_EVENT_GFX_KYOGRE_FRONT",
+      "x": 1,
+      "y": 14,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_WALK_SLOWLY_IN_PLACE_RIGHT",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "NULL",
+      "flag": "FLAG_HIDE_KYOGRE"
+    },
+    {
+      "type": "object",
+      "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
+      "x": 14,
+      "y": 8,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "FiveIsland_WaterLabyrinth_EventScript_ItemDeepSeaTooth",
+      "flag": "FLAG_HIDE_WATER_LABY_DEEP_SEA_TOOTH"
     }
   ],
   "warp_events": [],
-  "coord_events": [],
+  "coord_events": [
+    {
+      "type": "trigger",
+      "x": 7,
+      "y": 13,
+      "elevation": 0,
+      "var": "VAR_TEMP_0",
+      "var_value": "0",
+      "script": "FiveIsland_WaterLabyrinth_EventScript_KyogreTrigger"
+    },
+    {
+      "type": "trigger",
+      "x": 7,
+      "y": 14,
+      "elevation": 0,
+      "var": "VAR_TEMP_0",
+      "var_value": "0",
+      "script": "FiveIsland_WaterLabyrinth_EventScript_KyogreTrigger"
+    },
+    {
+      "type": "trigger",
+      "x": 7,
+      "y": 15,
+      "elevation": 0,
+      "var": "VAR_TEMP_0",
+      "var_value": "0",
+      "script": "FiveIsland_WaterLabyrinth_EventScript_KyogreTrigger"
+    }
+  ],
   "bg_events": []
 }

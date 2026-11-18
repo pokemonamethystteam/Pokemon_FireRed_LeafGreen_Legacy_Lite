@@ -359,7 +359,13 @@ void StartLegendaryBattle(void)
     case SPECIES_MEWTWO:
         CreateBattleStartTask(B_TRANSITION_BLUR, MUS_VS_MEWTWO);
         break;
+    case SPECIES_MEW:
+        CreateBattleStartTask(B_TRANSITION_BLUR, MUS_VS_MEWTWO);
+        break;
     case SPECIES_DEOXYS:
+        CreateBattleStartTask(B_TRANSITION_BLUR, MUS_VS_DEOXYS);
+        break;
+    case SPECIES_JIRACHI:
         CreateBattleStartTask(B_TRANSITION_BLUR, MUS_VS_DEOXYS);
         break;
     case SPECIES_MOLTRES:
@@ -373,7 +379,6 @@ void StartLegendaryBattle(void)
     case SPECIES_REGICE:
     case SPECIES_REGIROCK:
     case SPECIES_REGISTEEL:
-    case SPECIES_JIRACHI:
     case SPECIES_LATIOS:
     case SPECIES_LATIAS:
     case SPECIES_CELEBI:

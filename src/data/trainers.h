@@ -4932,15 +4932,15 @@ const struct Trainer gTrainers[] = {
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
         .party = NO_ITEM_DEFAULT_MOVES(sParty_Beauty_VR_Katie),
     },
-    [TRAINER_BURGLAR_VR_JUSTIN] = {
+    [TRAINER_BURGLAR_VR_LYN] = {
         .trainerClass = TRAINER_CLASS_BURGLAR,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_SUSPICIOUS,
         .trainerPic = TRAINER_PIC_BURGLAR,
-        .trainerName = _("JUSTIN"),
+        .trainerName = _("LYN"),
         .items = {},
         .doubleBattle = FALSE,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
-        .party = NO_ITEM_DEFAULT_MOVES(sParty_Burglar_VR_Justin),
+        .party = NO_ITEM_DEFAULT_MOVES(sParty_Burglar_VR_Lyn),
     },
     [TRAINER_BLACK_BELT_VR_THOMAS] = {
         .trainerClass = TRAINER_CLASS_BLACK_BELT,
@@ -4952,15 +4952,15 @@ const struct Trainer gTrainers[] = {
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
         .party = NO_ITEM_DEFAULT_MOVES(sParty_BlackBelt_VR_Thomas),
     },
-    [TRAINER_BUG_CATCHER_7] = {
-        .trainerClass = TRAINER_CLASS_BUG_CATCHER,
-        .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MALE,
-        .trainerPic = TRAINER_PIC_BUG_CATCHER,
-        .trainerName = _(""),
+    [TRAINER_MTEMBER_JUSTIN] = {
+        .trainerClass = TRAINER_CLASS_COOLTRAINER,
+        .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_COOL,
+        .trainerPic = TRAINER_PIC_COOLTRAINER_M,
+        .trainerName = _("JUSTIN"),
         .items = {},
         .doubleBattle = FALSE,
-        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
-        .party = NO_ITEM_DEFAULT_MOVES(sParty_BugCatcher7),
+        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_TRY_TO_FAINT | AI_SCRIPT_CHECK_VIABILITY,
+        .party = ITEM_CUSTOM_MOVES(sParty_MtEmber_Justin),
     },
     [TRAINER_BUG_CATCHER_8] = {
         .trainerClass = TRAINER_CLASS_BUG_CATCHER,

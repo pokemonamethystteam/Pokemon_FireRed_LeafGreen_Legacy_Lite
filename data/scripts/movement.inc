@@ -53,6 +53,10 @@ Common_Movement_FaceDown::
 	face_down
 	step_end
 
+Common_Movement_FaceUp::
+	face_up
+	step_end
+
 Common_Movement_WalkUp5::
 	walk_up
 	walk_up

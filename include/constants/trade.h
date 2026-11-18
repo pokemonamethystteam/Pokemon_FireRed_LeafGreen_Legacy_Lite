@@ -10,15 +10,17 @@
 #define LINK_TRADE_TIMEOUT 300
 
 // In-game Trade IDs
-#define INGAME_TRADE_MR_MIME   0
-#define INGAME_TRADE_JYNX      1
-#define INGAME_TRADE_MACHOKE   2  // M or F depending on version
-#define INGAME_TRADE_FARFETCHD 3
-#define INGAME_TRADE_DUGTRIO 4  // Nidorino or Nidorina depending on version
-#define INGAME_TRADE_PARASECT 5
-#define INGAME_TRADE_RHYDON 6
-#define INGAME_TRADE_MUK   7
-#define INGAME_TRADE_DEWGONG      8
+#define INGAME_TRADE_MR_MIME    0
+#define INGAME_TRADE_JYNX       1
+#define INGAME_TRADE_MACHOKE    2  
+#define INGAME_TRADE_FARFETCHD  3
+#define INGAME_TRADE_DUGTRIO    4  
+#define INGAME_TRADE_PARASECT   5
+#define INGAME_TRADE_RHYDON     6
+#define INGAME_TRADE_MUK        7
+#define INGAME_TRADE_DEWGONG    8
+#define INGAME_TRADE_ANORITH    9
+#define INGAME_TRADE_LILEEP     10
 
 // Return values for CanTradeSelectedMon and CanSpinTradeMon
 #define CAN_TRADE_MON              0

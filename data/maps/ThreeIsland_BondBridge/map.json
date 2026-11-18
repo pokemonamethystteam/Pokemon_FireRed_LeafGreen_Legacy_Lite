@@ -146,6 +146,21 @@
       "trainer_sight_or_berry_tree_id": "0",
       "script": "EventScript_CutTree",
       "flag": "FLAG_TREE34"
+    },
+    {
+      "local_id": "LOCALID_BLUE_THREEISLAND",
+      "type": "object",
+      "graphics_id": "OBJ_EVENT_GFX_BLUE",
+      "x": 83,
+      "y": 7,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_FACE_RIGHT",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "NULL",
+      "flag": "FLAG_HIDE_BLUE_THREEISLAND"
     }
   ],
   "warp_events": [
@@ -164,7 +179,26 @@
       "dest_warp_id": "0"
     }
   ],
-  "coord_events": [],
+  "coord_events": [
+    {
+      "type": "trigger",
+      "x": 91,
+      "y": 11,
+      "elevation": 0,
+      "var": "VAR_TEMP_0",
+      "var_value": "0",
+      "script": "ThreeIsland_BondBridge_EventScript_BlueTriggerSouth"
+    },
+    {
+      "type": "trigger",
+      "x": 91,
+      "y": 10,
+      "elevation": 0,
+      "var": "VAR_TEMP_0",
+      "var_value": "0",
+      "script": "ThreeIsland_BondBridge_EventScript_BlueTriggerNorth"
+    }
+  ],
   "bg_events": [
     {
       "type": "sign",

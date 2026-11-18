@@ -8,8 +8,23 @@ FuchsiaCity_House1_EventScript_Woman::
 FuchsiaCity_House1_EventScript_OldMan::
 	lock
 	faceplayer
+	goto_if_set FLAG_ENABLE_SHIP_SOUTHERN_ISLAND, FuchsiaCity_House1_EventScript_OldManYourProblem
 	famechecker FAMECHECKER_BILL, 2
 	msgbox FuchsiaCity_House1_Text_BillIsMyGrandson
+	goto_if_set FLAG_SYS_GAME_CLEAR, FuchsiaCity_House1_EventScript_OldManGiveEonTicket
+	release
+	end
+
+FuchsiaCity_House1_EventScript_OldManGiveEonTicket::
+	msgbox FuchsiaCity_House1_Text_AreYouTheChampion
+	giveitem ITEM_EON_TICKET
+	setflag FLAG_ENABLE_SHIP_SOUTHERN_ISLAND
+	msgbox FuchsiaCity_House1_Text_TakeGoodCare
+	release
+	end
+
+FuchsiaCity_House1_EventScript_OldManYourProblem::
+	msgbox FuchsiaCity_House1_Text_TakeGoodCare
 	release
 	end
 

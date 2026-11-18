@@ -2532,6 +2532,39 @@ void UpdateLoreleiDollCollection(void)
     }
 }
 
+// Changes a Deoxys' form
+void TryChangeDeoxysForm(void)
+{
+    u16 baseSpecies = GetMonData(&gPlayerParty[gSpecialVar_0x8004], MON_DATA_SPECIES);
+    u16 targetSpecies;
+
+    if (baseSpecies == SPECIES_DEOXYS)
+    {
+        targetSpecies = SPECIES_DEOXYS_ATTACK;
+    }
+    else if (baseSpecies == SPECIES_DEOXYS_ATTACK)
+    {
+        targetSpecies = SPECIES_DEOXYS_DEFENSE;
+    }
+    else if (baseSpecies == SPECIES_DEOXYS_DEFENSE)
+    {
+        targetSpecies = SPECIES_DEOXYS_SPEED;
+    }
+    else if (baseSpecies == SPECIES_DEOXYS_SPEED)
+    {
+        targetSpecies = SPECIES_DEOXYS;
+    }
+    else
+    {
+         gSpecialVar_Result = FALSE;
+         return;
+    }
+    SetMonData(&gPlayerParty[gSpecialVar_0x8004], MON_DATA_SPECIES, &targetSpecies);
+    CalculateMonStats(&gPlayerParty[gSpecialVar_0x8004]);
+    gSpecialVar_Result = TRUE;
+    return;
+}
+
 void LoopWingFlapSound(void)
 {
     // 8004 = Num flaps

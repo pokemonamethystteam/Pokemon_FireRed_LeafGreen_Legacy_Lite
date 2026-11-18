@@ -8,6 +8,8 @@ PalletTown_MapScripts::
 PalletTown_OnTransition::
 	setworldmapflag FLAG_WORLD_MAP_PALLET_TOWN
 	call_if_set FLAG_PALLET_LADY_NOT_BLOCKING_SIGN, PalletTown_EventScript_TryReadySignLady
+	call_if_unset FLAG_ROUTE1_PROF_OAK_DEFEATED, PalletTown_EventScript_HideOakInLab
+	call_if_unset FLAG_HIDE_OAK_MANSION, PalletTown_EventScript_HideOakInLab
 	call_if_eq VAR_MAP_SCENE_PALLET_TOWN_SIGN_LADY, 0, PalletTown_EventScript_SetSignLadyPos
 	call_if_eq VAR_MAP_SCENE_PALLET_TOWN_SIGN_LADY, 1, PalletTown_EventScript_SetSignLadyDone
 	end
@@ -16,6 +18,10 @@ PalletTown_EventScript_TryReadySignLady::
 	goto_if_unset FLAG_OPENED_START_MENU, EventScript_Return
 	goto_if_ge VAR_MAP_SCENE_PALLET_TOWN_SIGN_LADY, 1, EventScript_Return
 	setvar VAR_MAP_SCENE_PALLET_TOWN_SIGN_LADY, 1
+	return
+
+PalletTown_EventScript_HideOakInLab::
+	setflag FLAG_HIDE_OAK_IN_HIS_LAB
 	return
 
 PalletTown_EventScript_SetSignLadyDone::

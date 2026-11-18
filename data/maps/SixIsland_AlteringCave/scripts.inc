@@ -1,25 +1,202 @@
 SixIsland_AlteringCave_MapScripts::
 	map_script MAP_SCRIPT_ON_TRANSITION, SixIsland_AlteringCave_OnTransition
+	map_script MAP_SCRIPT_ON_LOAD, SixIsland_AlteringCave_OnLoad
 	.byte 0
 
 SixIsland_AlteringCave_OnTransition::
 	setworldmapflag FLAG_WORLD_MAP_SIX_ISLAND_ALTERING_CAVE
-	goto_if_unset FLAG_HIDE_JIRACHI_ENTRANCE, SixIsland_AlteringCave_HideJirachiCaveEntrance
-	goto_if_unset FLAG_HIDE_JIRACHI_MAN_CAVE, SixIsland_AlteringCave_RemoveOldManTest
+	goto_if_ne VAR_REMOTE_LAB_STATE, 5, SixIsland_AlteringCave_RemoveOldMan
+	end
+
+SixIsland_AlteringCave_OnLoad::
+	goto_if_unset FLAG_UNHIDE_JIRACHI_ENTRANCE, SixIsland_AlteringCave_HideJirachiCaveEntrance
 	end
 
 SixIsland_AlteringCave_HideJirachiCaveEntrance::
 	setmetatile 28, 10 METATILE_RockTunnel_DirtGround, 0
 	return
-	end
-
-SixIsland_AlteringCave_RemoveOldManTest::
-	goto_if_set FLAG_HIDE_JIRACHI_MAN, SixIsland_AlteringCave_RemoveOldMan
-	return
-	end
 
 SixIsland_AlteringCave_RemoveOldMan::
 	setflag FLAG_HIDE_JIRACHI_MAN_CAVE
 	removeobject LOCALID_JIRACHI_MAN_CAVE
 	return
+
+SixIsland_AlteringCave_EventScript_OldManEvent::
+	msgbox SixIsland_AlteringCave_Text_OldManWishBackstory, MSGBOX_NPC
+	closemessage
+	applymovement LOCALID_JIRACHI_MAN_CAVE, SixIsland_OutcastIsland_Movement_OldManFaceUp
+	waitmovement 0
+	delay 60
+	msgbox SixIsland_AlteringCave_Text_OldManISupposeItsTime, MSGBOX_NPC
+	closemessage
+	delay 20
+	applymovement LOCALID_JIRACHI_MAN_CAVE, SixIsland_OutcastIsland_Movement_OldManWalkToSwitch
+	waitmovement 0
+	delay 40
+	playse SE_CLICK
+	msgbox SixIsland_AlteringCave_Text_Click, MSGBOX_NPC
+	closemessage
+	setflag FLAG_UNHIDE_JIRACHI_ENTRANCE
+	setmetatile 28, 10 METATILE_RockTunnel_Ladder, 0
+	special DrawWholeMapView
+	playse SE_DOOR
+	waitse
+	applymovement LOCALID_JIRACHI_MAN_CAVE, SixIsland_OutcastIsland_Movement_OldManWalkToPlayer
+	waitmovement 0
+	msgbox SixIsland_AlteringCave_Text_OldManDownThere, MSGBOX_NPC
+	closemessage
+	applymovement LOCALID_JIRACHI_MAN_CAVE, SixIsland_OutcastIsland_Movement_OldManStartWalkAway
+	waitmovement 0
+	msgbox SixIsland_AlteringCave_Text_TakeCareOldFriend, MSGBOX_NPC
+	closemessage
+	applymovement LOCALID_JIRACHI_MAN_CAVE, SixIsland_OutcastIsland_Movement_OldManEndWalkAway
+	waitmovement 0
+	setflag FLAG_HIDE_JIRACHI_MAN_CAVE
+	removeobject LOCALID_JIRACHI_MAN_CAVE
+	clearflag FLAG_HIDE_JIRACHI_MAN
+	setvar VAR_REMOTE_LAB_STATE, 6
+	releaseall
+	end
+
+SixIsland_AlteringCave_EventScript_OldManEventTrigger1::
+	setvar VAR_TEMP_0, 1
+	goto_if_ne VAR_REMOTE_LAB_STATE, 5, SixIsland_AlteringCave_EventScript_OldManEventTriggerEnd
+	lockall
+	msgbox SixIsland_AlteringCave_Text_AhPlayer, MSGBOX_NPC
+	closemessage 
+	applymovement LOCALID_PLAYER, SixIsland_OutcastIsland_Movement_MovePlayerToOldMan1
+	waitmovement 0
+	goto SixIsland_AlteringCave_EventScript_OldManEvent
+	releaseall
+	end
+
+SixIsland_AlteringCave_EventScript_OldManEventTrigger2::
+	setvar VAR_TEMP_0, 1
+	goto_if_ne VAR_REMOTE_LAB_STATE, 5, SixIsland_AlteringCave_EventScript_OldManEventTriggerEnd
+	lockall
+	msgbox SixIsland_AlteringCave_Text_AhPlayer, MSGBOX_NPC
+	closemessage
+	applymovement LOCALID_PLAYER, SixIsland_OutcastIsland_Movement_MovePlayerToOldMan2
+	waitmovement 0
+	goto SixIsland_AlteringCave_EventScript_OldManEvent
+	releaseall
+	end
+
+SixIsland_AlteringCave_EventScript_OldManEventTriggerEnd::
+	end
+
+
+SixIsland_OutcastIsland_Movement_MovePlayerToOldMan1:
+	walk_up
+	walk_up
+	step_end
+
+SixIsland_OutcastIsland_Movement_MovePlayerToOldMan2:
+	walk_up
+	walk_up
+	walk_left
+	face_up
+	step_end
+
+SixIsland_OutcastIsland_Movement_OldManFaceUp:
+	face_up
+	step_end
+
+SixIsland_OutcastIsland_Movement_OldManWalkToSwitch:
+	walk_left
+	face_down
+	step_end
+
+SixIsland_OutcastIsland_Movement_OldManWalkToPlayer:
+	walk_right
+	face_down
+	step_end
+
+SixIsland_OutcastIsland_Movement_OldManStartWalkAway:
+	walk_right
+	walk_down
+	walk_down
+	walk_down
+	delay_16
+	delay_16
+	face_up
+	step_end
+
+SixIsland_OutcastIsland_Movement_OldManEndWalkAway:
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	step_end
+
+SixIsland_AlteringCave_EventScript_Scientist::
+	lockall
+	goto_if_unset FLAG_ALTERING_CAVE_MET_SCIENTIST, SixIsland_AlteringCave_EventScript_ScientistIntro
+	goto_if_eq VAR_ALTERING_CAVE_WILD_SET, 0, SixIsland_AlteringCave_EventScript_Scientist0
+	goto_if_eq VAR_ALTERING_CAVE_WILD_SET, 1, SixIsland_AlteringCave_EventScript_Scientist1
+	goto_if_eq VAR_ALTERING_CAVE_WILD_SET, 2, SixIsland_AlteringCave_EventScript_Scientist2
+	goto_if_eq VAR_ALTERING_CAVE_WILD_SET, 3, SixIsland_AlteringCave_EventScript_Scientist3
+	goto_if_eq VAR_ALTERING_CAVE_WILD_SET, 4, SixIsland_AlteringCave_EventScript_Scientist4
+	goto_if_eq VAR_ALTERING_CAVE_WILD_SET, 5, SixIsland_AlteringCave_EventScript_Scientist5
+	goto_if_eq VAR_ALTERING_CAVE_WILD_SET, 6, SixIsland_AlteringCave_EventScript_Scientist6
+	goto_if_eq VAR_ALTERING_CAVE_WILD_SET, 7, SixIsland_AlteringCave_EventScript_Scientist7
+	goto_if_eq VAR_ALTERING_CAVE_WILD_SET, 8, SixIsland_AlteringCave_EventScript_Scientist8
+	goto_if_eq VAR_ALTERING_CAVE_WILD_SET, 9, SixIsland_AlteringCave_EventScript_Scientist9
+	releaseall
+	end
+
+SixIsland_AlteringCave_EventScript_ScientistIntro::
+	msgbox SixIsland_AlteringCave_Text_ScientistIntro, MSGBOX_NPC
+	setflag FLAG_ALTERING_CAVE_MET_SCIENTIST
+	releaseall
+	end
+
+SixIsland_AlteringCave_EventScript_Scientist0::
+	msgbox SixIsland_AlteringCave_Text_Scientist_0, MSGBOX_NPC
+	releaseall
+	end
+
+SixIsland_AlteringCave_EventScript_Scientist1::
+	msgbox SixIsland_AlteringCave_Text_Scientist_1, MSGBOX_NPC
+	releaseall
+	end
+
+SixIsland_AlteringCave_EventScript_Scientist2::
+	msgbox SixIsland_AlteringCave_Text_Scientist_2, MSGBOX_NPC
+	releaseall
+	end
+
+SixIsland_AlteringCave_EventScript_Scientist3::
+	msgbox SixIsland_AlteringCave_Text_Scientist_3, MSGBOX_NPC
+	releaseall
+	end
+
+SixIsland_AlteringCave_EventScript_Scientist4::
+	msgbox SixIsland_AlteringCave_Text_Scientist_4, MSGBOX_NPC
+	releaseall
+	end
+
+SixIsland_AlteringCave_EventScript_Scientist5::
+	msgbox SixIsland_AlteringCave_Text_Scientist_5, MSGBOX_NPC
+	releaseall
+	end
+
+SixIsland_AlteringCave_EventScript_Scientist6::
+	msgbox SixIsland_AlteringCave_Text_Scientist_6, MSGBOX_NPC
+	releaseall
+	end
+
+SixIsland_AlteringCave_EventScript_Scientist7::
+	msgbox SixIsland_AlteringCave_Text_Scientist_7, MSGBOX_NPC
+	releaseall
+	end
+
+SixIsland_AlteringCave_EventScript_Scientist8::
+	msgbox SixIsland_AlteringCave_Text_Scientist_8, MSGBOX_NPC
+	releaseall
+	end
+
+SixIsland_AlteringCave_EventScript_Scientist9::
+	msgbox SixIsland_AlteringCave_Text_Scientist_9, MSGBOX_NPC
+	releaseall
 	end

@@ -237,7 +237,11 @@
     "BirthIsland_Exterior",
     "OneIsland_KindleRoad_EmberSpa",
     "BirthIsland_Harbor",
-    "NavelRock_Harbor"
+    "NavelRock_Harbor",
+    "MoltenCave",
+    "SouthernIsland_Interior",
+    "SouthernIsland_Exterior",
+    "SouthernIsland_Harbor"
   ],
   "gMapGroup_TownsAndRoutes": [
     "PalletTown",
@@ -478,7 +482,8 @@
     "Route22_NorthEntrance"
   ],
   "gMapGroup_IndoorRoute23": [
-    "Route23_UnusedHouse"
+    "Route23_UnusedHouse",
+    "Route23_LanceStudy"
   ],
   "gMapGroup_IndoorRoute25": [
     "Route25_SeaCottage"

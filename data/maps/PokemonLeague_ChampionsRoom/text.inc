@@ -17,22 +17,18 @@ PokemonLeague_ChampionsRoom_Text_Intro::
     .string "the world!$"
 
 PokemonLeague_ChampionsRoom_Text_RematchIntro::
-    .string "{RIVAL}: Hey, {PLAYER}!\p"
-    .string "You came back, {PLAYER}!\n"
-    .string "Hahah, that is so great!\p"
-    .string "My rival should be strong to keep\n"
-    .string "me sharp.\p"
-    .string "While working on my POKéDEX, I\n"
-    .string "looked all over for POKéMON.\p"
-    .string "Not only that, I assembled teams\n"
-    .string "that would beat any POKéMON type.\p"
-    .string "And now…\p"
-    .string "I'm the POKéMON LEAGUE CHAMPION!\p"
-    .string "{PLAYER}!\n"
-    .string "Do you know what that means?\p"
-    .string "I'll tell you.\p"
-    .string "I am the most powerful TRAINER in\n"
-    .string "the world!$"
+    .string "{RIVAL}: Back again?\p"
+    .string "I've been waiting, {PLAYER}!\p"
+    .string "This time, my team's stronger\n"
+    .string "and ready to take you down!\p"
+    .string "Ready to hand over that title?\p"
+    .string "Let's do this!\n"
+    .string "No holding back!$"
+
+PokemonLeague_ChampionsRoom_Text_RematchDefeat::
+    .string "Even with my strongest team,\n"
+    .string "your skills as CHAMPION...\p"
+    .string "They're real.$"
 
 PokemonLeague_ChampionsRoom_Text_Defeat::
     .string "NO!\n"
@@ -63,6 +59,12 @@ PokemonLeague_ChampionsRoom_Text_PostBattle::
     .string "LEAGUE CHAMPION!\p"
     .string "Although I don't like to admit it…$"
 
+PokemonLeague_ChampionsRoom_Text_RematchPostBattle::
+    .string "Fine, you win.\p"
+    .string "You're the best, {PLAYER}.\p"
+    .string "But I won't give up just yet!\p"
+    .string "Next time, I'll be CHAMPION.$"
+
 PokemonLeague_ChampionsRoom_Text_OakPlayer::
     .string "OAK: {PLAYER}!$"
 
@@ -75,6 +77,16 @@ PokemonLeague_ChampionsRoom_Text_OakCongratulations::
     .string "first left with {STR_VAR_1} to work\l"
     .string "on the POKéDEX.\p"
     .string "{PLAYER}, you have come of age!$"
+
+PokemonLeague_ChampionsRoom_Text_RematchOakCongratulations::
+    .string "OAK: So, you won again!\p"
+    .string "Congratulations!\p"
+    .string "Still the CHAMP I see!\p"
+    .string "You've returned, proving your\n"
+    .string "strength once again!\p"
+    .string "Your bond with your POKéMON is\n"
+    .string "truly inspiring!\p"
+    .string "{PLAYER}, you're a true CHAMPION!$"
 
 PokemonLeague_ChampionsRoom_Text_OakImDisappointedRival::
     .string "OAK: {RIVAL}…\n"
@@ -89,6 +101,19 @@ PokemonLeague_ChampionsRoom_Text_OakImDisappointedRival::
     .string "POKéMON with love and trust.\p"
     .string "Without them, you will never\n"
     .string "become a CHAMP again!$"
+
+PokemonLeague_ChampionsRoom_Text_RematchOakImDisappointedRival::
+    .string "OAK: Ah, {RIVAL}...\p"
+    .string "I had hoped for a better\n"
+    .string "outcome.\p"
+    .string "But, I see you have fallen\n"
+    .string "short once more!\p"
+    .string "Remember, {RIVAL},\n"
+    .string "it's not just about strength\l"
+    .string "in battle, but also about the\l"
+    .string "bond you share with your\l"
+    .string "POKéMON.\p"
+    .string "Reflect on this, and grow stronger!"
 
 PokemonLeague_ChampionsRoom_Text_OakPlayerComeWithMe::
     .string "OAK: {PLAYER}.\p"

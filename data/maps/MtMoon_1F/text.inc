@@ -90,3 +90,22 @@ MtMoon_1F_Text_BrockHelpsExcavateFossils::
     .string "under MT. MOON.\p"
     .string "Sometimes, BROCK of PEWTER GYM\n"
     .string "lends me a hand.$"
+
+MtMoon_B1F_Text_DoorOpenedFarAway::
+	.string "It sounded as if paths opened\n"
+	.string "somewhere far away.$"
+
+tempmessage0wooo::
+	.string "0$"
+
+tempmessage1wooo::
+	.string "1$"
+
+tempmessage2wooo::
+	.string "2$"
+
+tempmessage3wooo::
+	.string "3$"
+
+tempmessage4wooo::
+	.string "4$"

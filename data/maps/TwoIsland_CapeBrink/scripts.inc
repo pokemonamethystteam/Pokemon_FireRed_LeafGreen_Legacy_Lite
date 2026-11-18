@@ -1,2 +1,29 @@
 TwoIsland_CapeBrink_MapScripts::
+	map_script MAP_SCRIPT_ON_LOAD, TwoIsland_CapeBrink_OnLoad
+	map_script MAP_SCRIPT_ON_TRANSITION, TwoIsland_CapeBrink_OnTransition
 	.byte 0
+
+TwoIsland_CapeBrink_OnLoad::
+	goto_if_eq VAR_GROUDON_LOCATION, 2, TwoIsland_CapeBrink_EventScript_SetUpMoltenCave
+	clearflag FLAG_HIDE_GROUDON_NPC
+	end
+
+TwoIsland_CapeBrink_EventScript_SetUpMoltenCave::
+	setmetatile 16, 25, METATILE_General_CaveEntrance, 0
+	goto_if_set FLAG_CAUGHT_GROUDON, TwoIsland_CapeBrink_EventScript_SetUpMoltenCaveClearGroudon
+	goto_if_set FLAG_GROUDON_FLED, TwoIsland_CapeBrink_EventScript_SetUpMoltenCaveClearGroudon
+	clearflag FLAG_HIDE_GROUDON
+	setflag FLAG_HIDE_GROUDON_NPC
+TwoIsland_CapeBrink_EventScript_SetUpMoltenCaveClearGroudon::
+	clearflag FLAG_HIDE_GROUDON_NPC
+	end
+
+TwoIsland_CapeBrink_OnTransition::
+	goto_if_eq VAR_GROUDON_LOCATION, 2, TwoIsland_CapeBrink_EventScript_TestWeather
+	end
+
+TwoIsland_CapeBrink_EventScript_TestWeather::
+	goto_if_set FLAG_CAUGHT_GROUDON, TwoIsland_CapeBrink_EventScript_SetUpMoltenCaveClearGroudon
+	goto_if_set FLAG_GROUDON_FLED, TwoIsland_CapeBrink_EventScript_SetUpMoltenCaveClearGroudon
+	setweather WEATHER_DROUGHT
+	end

@@ -1120,7 +1120,7 @@
     {
       "id": "LAYOUT_ROUTE23",
       "name": "Route23_Layout",
-      "width": 24,
+      "width": 30,
       "height": 160,
       "border_width": 2,
       "border_height": 2,
@@ -1648,7 +1648,7 @@
     {
       "id": "LAYOUT_ROCK_TUNNEL_B1F",
       "name": "RockTunnel_B1F_Layout",
-      "width": 48,
+      "width": 64,
       "height": 40,
       "border_width": 2,
       "border_height": 2,
@@ -2740,7 +2740,7 @@
     {
       "id": "LAYOUT_FIVE_ISLAND_WATER_LABYRINTH",
       "name": "FiveIsland_WaterLabyrinth_Layout",
-      "width": 72,
+      "width": 73,
       "height": 20,
       "border_width": 2,
       "border_height": 2,
@@ -3149,7 +3149,7 @@
       "id": "LAYOUT_MT_EMBER_SUMMIT",
       "name": "MtEmber_Summit_Layout",
       "width": 19,
-      "height": 22,
+      "height": 24,
       "border_width": 2,
       "border_height": 2,
       "primary_tileset": "gTileset_General",
@@ -4404,6 +4404,66 @@
       "secondary_tileset": "gTileset_RockTunnel",
       "border_filepath": "data/layouts/SixIsland_AlteringCave_JirachiRoom/border.bin",
       "blockdata_filepath": "data/layouts/SixIsland_AlteringCave_JirachiRoom/map.bin"
+    },
+    {
+      "id": "LAYOUT_MOLTEN_CAVE",
+      "name": "MoltenCave_Layout",
+      "width": 44,
+      "height": 32,
+      "border_width": 2,
+      "border_height": 2,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Cave",
+      "border_filepath": "data/layouts/MoltenCave/border.bin",
+      "blockdata_filepath": "data/layouts/MoltenCave/map.bin"
+    },
+    {
+      "id": "LAYOUT_SOUTHERN_ISLAND_EXTERIOR",
+      "name": "SouthernIsland_Exterior_Layout",
+      "width": 33,
+      "height": 30,
+      "border_width": 2,
+      "border_height": 2,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_SeviiIslands123",
+      "border_filepath": "data/layouts/SouthernIsland_Exterior/border.bin",
+      "blockdata_filepath": "data/layouts/SouthernIsland_Exterior/map.bin"
+    },
+    {
+      "id": "LAYOUT_SOUTHERN_ISLAND_INTERIOR",
+      "name": "SouthernIsland_Interior_Layout",
+      "width": 27,
+      "height": 24,
+      "border_width": 2,
+      "border_height": 2,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_SeviiIslands123",
+      "border_filepath": "data/layouts/SouthernIsland_Interior/border.bin",
+      "blockdata_filepath": "data/layouts/SouthernIsland_Interior/map.bin"
+    },
+    {
+      "id": "LAYOUT_SOUTHERN_ISLAND_HARBOR",
+      "name": "SouthernIsland_Harbor_Layout",
+      "width": 17,
+      "height": 13,
+      "border_width": 2,
+      "border_height": 2,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_IslandHarbor",
+      "border_filepath": "data/layouts/SouthernIsland_Harbor/border.bin",
+      "blockdata_filepath": "data/layouts/SouthernIsland_Harbor/map.bin"
+    },
+    {
+      "id": "LAYOUT_ROUTE23_LANCE_STUDY",
+      "name": "Route23_LanceStudy_Layout",
+      "width": 11,
+      "height": 9,
+      "border_width": 2,
+      "border_height": 2,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_GenericBuilding2",
+      "border_filepath": "data/layouts/Route23_LanceStudy/border.bin",
+      "blockdata_filepath": "data/layouts/Route23_LanceStudy/map.bin"
     }
   ]
 }

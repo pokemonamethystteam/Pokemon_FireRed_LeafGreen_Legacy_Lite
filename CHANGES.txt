@@ -1,31 +1,36 @@
-Things coppied from pokemon legacy
+Things copied from pokemon legacy
 
-    Boss teams
-    running indoors
-    running shoes from start
-    repel cost and reuse
-    Deletable HMs
-    Player faces away from nurse joy after healing
-    Save is shorter
-    Fishing guru added to vermillian city mart
-    Fishing guru's older brother replaces original fishing guru location
-    gift fossil added to old fishing guru's older brother location
-    Move is the first option in the pc
-    Game corner pokemon
-    Prof Oak battles 1 & 2
-    gym rematches
-    Changed level of revived fossil mons from 5 to 40
-    Items picked up while bag is full go to PC
-    Speed up while surfing by holding B
-    Hold A or B durring battle to speed up text
-    Pause between fainting cry and animation is half as long
-    Trees are cut permanetly
-    Victory road rocks are placed on switch upon reentering the room after solving the puzzle
-    Mew event
-    Added all stones to department store
-    Altering Cave radomly changes what Pokemon is in it each time you enter
-    Pokemon encounters
-    Pickup items
+    Boss teams.
+    running indoors.
+    running shoes from start.
+    repel cost and reuse.
+    Deletable HMs.
+    Player faces away from nurse joy after healing.
+    Save is shorter.
+    Fishing guru added to vermilion city mart.
+    Fishing guru's older brother replaces original fishing guru location.
+    gift fossil added to old fishing guru's older brother location.
+    Move is the first option in the pc.
+    Game corner pokemon.
+    Prof Oak battles 1 & 2.
+    gym rematches.
+    Changed level of revived fossil mons from 5 to 40.
+    Items picked up while bag is full go to PC.
+    Speed up while surfing by holding B.
+    Hold A or B during battle to speed up text.
+    Pause between fainting cry and animation is half as long.
+    Trees are cut permanently.
+    Victory road rocks are placed on switch upon reentering the room after solving the puzzle.
+    Mew event.
+    Added all stones to department store.
+    Altering Cave randomly changes what Pokemon is in it each time you enter.
+    Pokemon encounters.
+    Pickup items.
+    E4 TM clerk.
+    Celadon department store TM shops.
+    All move tutors are reusable after beating the E4.
+    Uncaught Legendaries reappear after beating E4.
+    Deoxys form change is available in the game.
 
     Pokemon info including
         stats
@@ -35,67 +40,69 @@ Things coppied from pokemon legacy
         locations
 
     Battle Changes
-        Ghost is specail
-        Dark is physical
-        Hail makes blizzard 100% accurate
-        Hail boosts defense for ice types
-        Sandstorm boosts sp defense for rock types and sand veil pokemon
-        Magma armor reduces damage from water attacks by 1/8
-        Stench reduces accuracy
-        Illuminate prevents accuracy loss and ingores evasion boosts
+        Ghost is special.
+        Dark is physical.
+        Hail makes blizzard 100% accurate.
+        Hail boosts defense for ice types.
+        Sandstorm boosts sp defense for rock types and sand veil pokemon.
+        Magma armor reduces damage from water attacks by 1/8.
+        Stench reduces accuracy.
+        Illuminate prevents accuracy loss and ignores evasion boosts.
 
-Things not coppied from legacy
+Things not copied from legacy
 
-    Espeon and Umbreon evolve from friendship using Wurmple's random method
-    Some learnset updates
-    Made bait/rocks more effective in safari zone
-    National dex isn't needed for cross gen evos
-    Added Brick Piece to held item to wild Tyrouge line
-    increased wild held item chance for magnemite, horsea, slowpoke, tyrouge, and poliwag  lines
-    60 Pokemon no longer required for National dex
-    Game corner item costs
-    Added up grade to Silph storage room
-    Added Dragon Scale to Seafoam Islands BF2
-    Added Metal Coat to Saffron City
-    Added Kings Rock to Cerulean City (Requires Bill)
-    Berry spots made slightly more visible
+    Espeon and Umbreon evolve from friendship using Wurmple's random method.
+    Some learnset updates.
+    Made bait/rocks more effective in safari zone.
+    National dex isn't needed for cross gen evos.
+    Added Brick Piece to held item to wild Tyrouge line.
+    increased wild held item chance for pikachu, magnemite, horsea, slowpoke, tyrouge, cubone, chansey, and poliwag  lines.
+    60 Pokemon no longer required for National dex.
+    Game corner item costs.
+    Added up grade to Silph storage room.
+    Added Dragon Scale to Seafoam Islands BF2.
+    Added Metal Coat to Saffron City.
+    Added Kings Rock to Cerulean City (Requires Bill).
+    Added Soothe Bell to Celadon City.
+    Added Macho Brace to Route 13. 
+    Berry spots made slightly more visible.
     Cerulean Cave is enterable without completing the Sevii Islands.
-    Sevii Islands encounters and trainers updated
-    Bill double checks if you want to go to the Sevii Islands when he asks
-    Shellder added to routes 13 and 19
-    Catching tutorial is optional
-    Removed running shoes aid
-    Beldum gift added to players house after getting national dex
+    Sevii Islands encounters and trainers updated.
+    Bill double checks if you want to go to the Sevii Islands when he asks.
+    Shellder added to routes 13 and 19.
+    Catching tutorial is optional.
+    Removed running shoes aid.
+    Beldum gift added to players house after getting national dex.
     Gift Castform from a scientist in the Six Island Town.
     Aurora Pass given by scientist in the new lab on Green Path.
-    Rayquaza Event added to green path lab
+    Rayquaza Event added to green path lab.
+    Jirachi Event added to green path lab.
+    Regi puzzle in Mt moon.
+    Regirock in diglets tunnel.
+    Registeel in victory road.
+    Regice in Rock tunnel.
+    Mystic Ticket given by lance in his house on route 23.
+    Legendary Beasts are released upon encountering Ho-Oh. One beast roams at a time based on starter. 
+    Book that lets you see the legendary beasts is added to Lances house.
+    Bill's grandpa gives you the Eon Ticket.
+    Both latis are catchable on Southern Island.
+    Mew and Deoxys special disobedience rules have been removed.
+    Added rare item clerk to the Trainer Tower lobby. Sells all non stone Evo items.
+    Deep sea scale added to Ruin Valley.
+    Deep Sea Tooth added to Water Labyrinth.
+    Trades for Anorith and Lileep added to Four Islands Daycare.
+    Gift Dive HM added to Trainer Tower lobby.
+    Gift Skitty on Three Island
+    Celebi event added to the Berry Forest
+
 
 Patch notes
 
 
 Things to do
-Update Sevii Islands
-fix shellder avaliability/add water encounters to route 17-18
-Gift Castform, Skitty
-Add deep sea tooth/scale and make them infinite
-TM/HM shop
-Reusable move tutors
-Regis
-Lugia/Ho-Oh event that is just the same from Emerald EX.
-
-Add text for the remote resarch lab, 
-Add Deoxys forms
-Add wishing sceintist guy
-Raquaza chasing Deoxys
-Groudon and Kyogre after Rayquaza defeated.
-Jirachi in altering cave.
-Altering cave explanation.
-
 
 
 Nice to haves
 
 Out of battle effects
-Nurse Joy fight 
-Officer Jenny fight
 Janine Trainer Pic

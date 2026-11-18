@@ -32,7 +32,6 @@ SeafoamIslands_B4F_Text_WeebraIntro::
     .string "to get this far, huh?\p"
     .string "Then I guess we don't\n"
     .string "gotta pull any punches.$"
-
 	
 SeafoamIslands_B4F_Text_WeebraDefeated::
 	.string "Nice moves!\p"

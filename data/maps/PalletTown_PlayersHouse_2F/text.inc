@@ -7,12 +7,3 @@ PalletTown_PlayersHouse_2F_Text_PressLRForHelp::
     .string "It's a posted notice…\p"
     .string "If you're confused, ask for HELP!\n"
     .string "Press the L or R Button!$"
-
-TestBoxTheBestBox::
-    .string "1$"
-
-TestBoxTheBestBox2::
-    .string "2$"
-
-TestBoxTheBestBox3::
-    .string "3$"

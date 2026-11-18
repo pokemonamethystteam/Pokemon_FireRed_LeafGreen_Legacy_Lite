@@ -118,3 +118,14 @@ TrainerTower_Lobby_Text_StairsTougherThanAnyBattle::
     .string "Never mind battling! These stairs…\n"
     .string "They're tougher than any battle…$"
 
+TrainerTower_Lobby_Text_YoullNeedAllTheHelp::
+    .string "You'll need all the help you\n"
+    .string "can get if you want to beat\l"
+    .string "the TOWER.\p"
+    .string "Here take this...$"
+
+TrainerTower_Lobby_Text_WaterCurrents::
+    .string "In the HOENN REGION, trainers\n"
+    .string "ride their POKéMON underwater!\p"
+    .string "The underwater currents are\n"
+    .string "too strong to here though.$"

@@ -685,3 +685,19 @@ SevenIsland_SevaultCanyon_House_EventScript_ItemLuckyPunch::
 SilphCo_4F_EventScript_ItemTM41::
 	finditem ITEM_TM41
 	end
+
+FiveIsland_WaterLabyrinth_EventScript_ItemDeepSeaTooth::
+	finditem ITEM_DEEP_SEA_TOOTH
+	end
+
+SixIsland_RuinValley_EventScript_ItemDeepSeaScale::
+	finditem ITEM_DEEP_SEA_SCALE
+	end
+
+CeladonCity_EventScript_ItemSootheBell::
+	finditem ITEM_SOOTHE_BELL
+	end
+
+Route13_EventScript_ItemMachoBrace::
+	finditem ITEM_MACHO_BRACE
+	end

@@ -2995,7 +2995,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_GroudonFront = {
     .tracks = TRACKS_FOOT,
     .oam = &gObjectEventBaseOam_32x32,
     .subspriteTables = gObjectEventSpriteOamTables_32x32,
-    .anims = sAnimTable_Standard,
+    .anims = sAnimTable_GroudonSide,
     .images = sPicTable_GroudonFront,
     .affineAnims = sAffineAnimTable_KyogreGroudon,
 };

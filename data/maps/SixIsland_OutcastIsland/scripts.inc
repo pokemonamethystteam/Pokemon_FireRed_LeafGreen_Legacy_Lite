@@ -16,12 +16,12 @@ SixIsland_OutcastIsland_OnTransition:
 	goto_if_eq VAR_RESULT, 8, SixIsland_OutcastIsland_EventScript_AlteringCave8
 	goto_if_eq VAR_RESULT, 9, SixIsland_OutcastIsland_EventScript_AlteringCave9
 	goto_if_eq VAR_REMOTE_LAB_STATE, 2, SixIsland_OutcastIsland_EventScript_SetUpRayquaza
-	goto_if_unset FLAG_RAYQUAZA_FLEW_AWAY, SixIsland_OutcastIsland_EventScript_SetUpRayquazaRematch
+	goto_if_unset FLAG_RAYQUAZA_FLED, SixIsland_OutcastIsland_EventScript_SetUpRayquazaRematch
 	return
 
 SixIsland_OutcastIsland_OnLoad::
 	goto_if_eq VAR_REMOTE_LAB_STATE, 2, SixIsland_OutcastIsland_EventScript_SetUpRayquaza
-	goto_if_unset FLAG_RAYQUAZA_FLEW_AWAY, SixIsland_OutcastIsland_EventScript_SetUpRayquazaRematch
+	goto_if_unset FLAG_RAYQUAZA_FLED, SixIsland_OutcastIsland_EventScript_SetUpRayquazaRematch
 	return
 
 SixIsland_OutcastIsland_EventScript_AlteringCave0::
@@ -186,13 +186,13 @@ SixIsland_OutcastIsland_EventScript_RayquazaEnd::
 	end
 
 SixIsland_OutcastIsland_EventScript_DefeatedRayquaza::
-	setflag FLAG_RAYQUAZA_FLEW_AWAY
+	setflag FLAG_RAYQUAZA_FLED
 	setvar VAR_0x8004, SPECIES_RAYQUAZA
 	goto SixIsland_OutcastIsland_EventScript_MonFlewAway
 	end
 
 SixIsland_OutcastIsland_EventScript_RanFromRayquaza::
-	setflag FLAG_RAYQUAZA_FLEW_AWAY
+	setflag FLAG_RAYQUAZA_FLED
 	setvar VAR_0x8004, SPECIES_RAYQUAZA
 	goto SixIsland_OutcastIsland_EventScript_MonFlewAway
 	release
@@ -216,7 +216,7 @@ SixIsland_OutcastIsland_EventScript_TextRayquazaRematch::
 	goto_if_eq VAR_REMOTE_LAB_STATE, 1, SixIsland_OutcastIsland_EventScript_End
 	goto_if_eq VAR_REMOTE_LAB_STATE, 0, SixIsland_OutcastIsland_EventScript_End
 	goto_if_set FLAG_CAUGHT_RAYQUAZA, SixIsland_OutcastIsland_EventScript_End
-	goto_if_unset FLAG_RAYQUAZA_FLEW_AWAY, SixIsland_OutcastIsland_EventScript_RayquazaRematch
+	goto_if_unset FLAG_RAYQUAZA_FLED, SixIsland_OutcastIsland_EventScript_RayquazaRematch
 	end
 
 SixIsland_OutcastIsland_EventScript_RayquazaRematch::

@@ -207,7 +207,6 @@ PalletTown_ProfessorOaksLab_ChooseStarterScene::
 	removeobject LOCALID_OAKS_LAB_PROF_OAK
 	setobjectxyperm LOCALID_OAKS_LAB_PROF_OAK, 6, 3
 	setobjectmovementtype LOCALID_OAKS_LAB_PROF_OAK, MOVEMENT_TYPE_FACE_DOWN
-	setflag FLAG_ROUTE1_PROF_OAK_DEFEATED	
 	clearflag FLAG_HIDE_OAK_IN_HIS_LAB
 	applymovement LOCALID_PLAYER, PalletTown_ProfessorOaksLab_Movement_PlayerEnter
 	waitmovement 0

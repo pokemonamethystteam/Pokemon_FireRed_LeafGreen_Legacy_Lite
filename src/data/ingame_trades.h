@@ -142,6 +142,38 @@ static const struct InGameTrade sInGameTrades[] = {
         .otGender = MALE,
         .sheen = 10,
         .requestedSpecies = SPECIES_GROWLITHE
+    },
+    [INGAME_TRADE_ANORITH] = 
+    {
+        .nickname = _("NORTH"),
+        .species = SPECIES_ANORITH,
+        .ivs = {15, 23, 22, 16, 23, 24},
+        .abilityNum = 0,
+        .otId = 21083,
+        .conditions = {5, 5, 5, 5, 30},
+        .personality = 0x5c77ecfa,
+        .heldItem = ITEM_SILVER_POWDER,
+        .mailNum = 255,
+        .otName = _("LEAH"),
+        .otGender = MALE,
+        .sheen = 10,
+        .requestedSpecies = SPECIES_OMANYTE
+    },
+    [INGAME_TRADE_LILEEP] = 
+    {
+        .nickname = _("ROCKER"),
+        .species = SPECIES_LILEEP,
+        .ivs = {15, 24, 22, 23, 16, 22},
+        .abilityNum = 0,
+        .otId = 14659,
+        .conditions = {5, 5, 5, 5, 30},
+        .personality = 0x06341016,
+        .heldItem = ITEM_MIRACLE_SEED,
+        .mailNum = 255,
+        .otName = _("THOMAS"),
+        .otGender = MALE,
+        .sheen = 10,
+        .requestedSpecies = SPECIES_KABUTO
     }
 };
 

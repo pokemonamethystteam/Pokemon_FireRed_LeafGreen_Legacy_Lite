@@ -159,6 +159,19 @@ static const struct MenuAction sMultichoiceList_DomeAmber[] = {
     { gOtherText_Exit }
 };
 
+static const struct MenuAction sMultichoiceList_HelixDome[] = {
+    { gText_HelixFossil },
+    { gText_DomeFossil },
+    { gOtherText_Exit }
+};
+
+static const struct MenuAction sMultichoiceList_HelixDomeAmber[] = {
+    { gText_HelixFossil },
+    { gText_DomeFossil },
+    { gText_OldAmber },
+    { gOtherText_Exit }
+};
+
 static const struct MenuAction sMultichoiceList_CeladonVendingMachine[] = {
     { gText_FreshWater_200 },
     { gText_SodaPop_300 },
@@ -447,6 +460,34 @@ static const struct MenuAction sMultichoiceList_SeviiNavelBirth[] = {
     { gOtherText_Exit }
 };
 
+static const struct MenuAction sMultichoiceList_SeviiSouth[] = {
+    { gText_SeviiIslands },
+    { gText_SouthIsland },
+    { gOtherText_Exit }
+};
+
+static const struct MenuAction sMultichoiceList_SeviiNavelSouth[] = {
+    { gText_SeviiIslands },
+    { gText_NavelRock },
+    { gText_SouthIsland },
+    { gOtherText_Exit }
+};
+
+static const struct MenuAction sMultichoiceList_SeviiBirthSouth[] = {
+    { gText_SeviiIslands },
+    { gText_BirthIsland },
+    { gText_SouthIsland },
+    { gOtherText_Exit }
+};
+
+static const struct MenuAction sMultichoiceList_SeviiNavelBirthSouth[] = {
+    { gText_SeviiIslands },
+    { gText_NavelRock },
+    { gText_BirthIsland },
+    { gText_SouthIsland },
+    { gOtherText_Exit }
+};
+
 static const struct MenuAction sMultichoiceList_Seagallop123[] = {
     { gText_OneIsland },
     { gText_TwoIsland },
@@ -570,6 +611,12 @@ static const struct MultichoiceListStruct sMultichoiceLists[] = {
     [MULTICHOICE_62]                                         = MULTICHOICE(sMultichoiceList_62),
     [MULTICHOICE_JOIN_OR_LEAD]                               = MULTICHOICE(sMultichoiceList_JoinOrLead),
     [MULTICHOICE_TRAINER_TOWER_MODE]                         = MULTICHOICE(sMultichoiceList_TrainerTowerMode),
+    [MULTICHOICE_SEVII_SOUTH]                                = MULTICHOICE(sMultichoiceList_SeviiSouth),
+    [MULTICHOICE_SEVII_NAVEL_SOUTH]                          = MULTICHOICE(sMultichoiceList_SeviiNavelSouth),
+    [MULTICHOICE_SEVII_BIRTH_SOUTH]                          = MULTICHOICE(sMultichoiceList_SeviiBirthSouth),
+    [MULTICHOICE_SEVII_NAVEL_BIRTH_SOUTH]                    = MULTICHOICE(sMultichoiceList_SeviiNavelBirthSouth),
+    [MULTICHOICE_HELIX_DOME]                                 = MULTICHOICE(sMultichoiceList_HelixDome),
+    [MULTICHOICE_HELIX_DOME_AMBER]                           = MULTICHOICE(sMultichoiceList_HelixDomeAmber),
 };
 
 // From Cool to Berries goes unused

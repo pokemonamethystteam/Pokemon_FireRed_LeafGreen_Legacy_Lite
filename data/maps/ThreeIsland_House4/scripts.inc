@@ -6,5 +6,58 @@ ThreeIsland_House4_EventScript_BaldingMan::
 	end
 
 ThreeIsland_House4_EventScript_LittleBoy::
-	msgbox ThreeIsland_House4_Text_PapaKeepsLyingToMe, MSGBOX_NPC
+	lock
+	faceplayer
+	goto_if_set FLAG_GOT_SKITTY, ThreeIsland_House4_EventScript_AlreadyGotSkitty
+	msgbox ThreeIsland_House4_Text_HaveMonForPlay
+	setvar VAR_TEMP_1, SPECIES_SKITTY
+	givemon SPECIES_SKITTY, 25
+	goto_if_eq VAR_RESULT, 0, ThreeIsland_House4_EventScript_ReceiveSkittyParty
+	goto_if_eq VAR_RESULT, 1, ThreeIsland_House4_EventScript_ReceiveSkittyPC
+	goto_if_eq VAR_RESULT, 2, EventScript_NoMoreRoomForPokemon
+	release
+	end
+
+ThreeIsland_House4_EventScript_ReceiveSkittyParty::
+	textcolor NPC_TEXT_COLOR_NEUTRAL
+	playfanfare MUS_LEVEL_UP
+	message ThreeIsland_House4_Text_ObtainedSkittyFromKid
+	waitmessage
+	waitfanfare
+	bufferspeciesname STR_VAR_1, SPECIES_SKITTY
+	msgbox Text_GiveNicknameToThisMon, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, NO, ThreeIsland_House4_EventScript_EndReceiveSkitty
+	call EventScript_GetGiftMonPartySlot
+	call EventScript_ChangePokemonNickname
+	goto ThreeIsland_House4_EventScript_EndReceiveSkitty
+	end
+
+ThreeIsland_House4_EventScript_ReceiveSkittyPC::
+	textcolor NPC_TEXT_COLOR_NEUTRAL
+	playfanfare MUS_LEVEL_UP
+	message ThreeIsland_House4_Text_ObtainedSkittyFromKid
+	waitmessage
+	waitfanfare
+	bufferspeciesname STR_VAR_1, SPECIES_SKITTY
+	msgbox Text_GiveNicknameToThisMon, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, NO, ThreeIsland_House4_EventScript_SkittyTransferredToPC
+	call EventScript_NameReceivedBoxMon
+	goto ThreeIsland_House4_EventScript_SkittyTransferredToPC
+	end
+
+ThreeIsland_House4_EventScript_SkittyTransferredToPC::
+	call EventScript_TransferredToPC
+	goto SilphCo_7F_EventScript_EndReceiveLapras
+	end
+
+ThreeIsland_House4_EventScript_EndReceiveSkitty::
+	textcolor NPC_TEXT_COLOR_MALE
+	msgbox ThreeIsland_House4_Text_ExplainSkitty
+	setflag FLAG_GOT_SKITTY
+	release
+	end
+
+ThreeIsland_House4_EventScript_AlreadyGotSkitty::
+	msgbox ThreeIsland_House4_Text_PapaKeepsLyingToMe
+	release
 	end

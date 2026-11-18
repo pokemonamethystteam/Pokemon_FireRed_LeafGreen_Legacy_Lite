@@ -45,14 +45,14 @@ VictoryRoad_1F_Text_KatiePostBattle::
     .string "It doesn't matter,\n"
     .string "RAICHU is still the best to me!$"
 
-VictoryRoad_1F_Text_JustinIntro::
+VictoryRoad_1F_Text_LynIntro::
     .string "LOOT AND PILLAGE!$"
 
-VictoryRoad_1F_Text_JustinDefeat::
+VictoryRoad_1F_Text_LynDefeat::
     .string "I thought you were soft\n"
 	.string "and weak...$"
 
-VictoryRoad_1F_Text_JustinPostBattle::
+VictoryRoad_1F_Text_LynPostBattle::
     .string "Go away, I am looking for my\n"
 	.string "next victim!\p"
     .string "A burglar's life for me,\n"

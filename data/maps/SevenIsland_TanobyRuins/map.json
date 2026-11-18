@@ -36,6 +36,7 @@
       "flag": "0"
     },
     {
+      "local_id": "LOCAL_ID_TANOBY_WITNESS",
       "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_HIKER",
       "x": 121,
@@ -47,7 +48,7 @@
       "trainer_type": "TRAINER_TYPE_NORMAL",
       "trainer_sight_or_berry_tree_id": "1",
       "script": "SevenIsland_TanobyRuins_EventScript_Benjamin",
-      "flag": "0"
+      "flag": "FLAG_HIDE_KYOGRE_NPC"
     },
     {
       "type": "object",
@@ -76,6 +77,21 @@
       "trainer_sight_or_berry_tree_id": "1",
       "script": "SevenIsland_TanobyRuins_EventScript_Clifford",
       "flag": "0"
+    },
+    {
+      "local_id": "LOCAL_ID_KYOGRE_TANOBY",
+      "type": "object",
+      "graphics_id": "OBJ_EVENT_GFX_KYOGRE_FRONT",
+      "x": 134,
+      "y": 14,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_WALK_SLOWLY_IN_PLACE_LEFT",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "NULL",
+      "flag": "FLAG_HIDE_KYOGRE"
     }
   ],
   "warp_events": [
@@ -129,7 +145,26 @@
       "dest_warp_id": "0"
     }
   ],
-  "coord_events": [],
+  "coord_events": [
+    {
+      "type": "trigger",
+      "x": 128,
+      "y": 13,
+      "elevation": 0,
+      "var": "VAR_TEMP_0",
+      "var_value": "0",
+      "script": "SevenIsland_TanobyRuins_EventScript_KyogreTrigger"
+    },
+    {
+      "type": "trigger",
+      "x": 128,
+      "y": 14,
+      "elevation": 0,
+      "var": "VAR_TEMP_0",
+      "var_value": "0",
+      "script": "SevenIsland_TanobyRuins_EventScript_KyogreTrigger"
+    }
+  ],
   "bg_events": [
     {
       "type": "hidden_item",

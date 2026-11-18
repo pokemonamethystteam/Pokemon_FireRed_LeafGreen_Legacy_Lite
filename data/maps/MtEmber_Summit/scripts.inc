@@ -14,12 +14,18 @@ MtEmber_Summit_EventScript_TryRemoveMoltres::
 	return
 
 MtEmber_Summit_OnTransition::
-	call_if_unset FLAG_FOUGHT_MOLTRES, MtEmber_Summit_EventScript_ShowMoltres
+	call_if_unset FLAG_FOUGHT_MOLTRES, MtEmber_Summit_EventScript_ShowMoltresTest
+	setflag FLAG_HIDE_MOLTRES
 	end
 
 MtEmber_Summit_EventScript_ShowMoltres::
 	clearflag FLAG_HIDE_MOLTRES
-	return
+	end
+
+MtEmber_Summit_EventScript_ShowMoltresTest::
+	call_if_unset FLAG_MOLTRES_FLED, MtEmber_Summit_EventScript_ShowMoltres
+	setflag FLAG_HIDE_MOLTRES
+	end
 
 MtEmber_Summit_EventScript_Moltres::
 	goto_if_questlog EventScript_ReleaseEnd
@@ -40,19 +46,22 @@ MtEmber_Summit_EventScript_Moltres::
 	waitstate
 	clearflag FLAG_SYS_SPECIAL_WILD_BATTLE
 	specialvar VAR_RESULT, GetBattleOutcome
-	goto_if_eq VAR_RESULT, B_OUTCOME_WON, MtEmber_Summit_EventScript_DefeatedMoltres
+	goto_if_eq VAR_RESULT, B_OUTCOME_WON, MtEmber_Summit_EventScript_RanFromMoltres
 	goto_if_eq VAR_RESULT, B_OUTCOME_RAN, MtEmber_Summit_EventScript_RanFromMoltres
 	goto_if_eq VAR_RESULT, B_OUTCOME_PLAYER_TELEPORTED, MtEmber_Summit_EventScript_RanFromMoltres
+	setflag FLAG_HIDE_MOLTRES
 	setflag FLAG_FOUGHT_MOLTRES
 	release
 	end
 
-MtEmber_Summit_EventScript_DefeatedMoltres::
-	setflag FLAG_FOUGHT_MOLTRES
-	goto EventScript_RemoveStaticMon
-	end
-
 MtEmber_Summit_EventScript_RanFromMoltres::
+	setflag FLAG_HIDE_MOLTRES
+	setflag FLAG_MOLTRES_FLED
 	setvar VAR_0x8004, SPECIES_MOLTRES
 	goto EventScript_MonFlewAway
+	end
+
+MtEmber_Summit_EventScript_Justin::
+	trainerbattle_single TRAINER_MTEMBER_JUSTIN, MtEmber_Summit_Text_JustinIntro, MtEmber_Summit_Text_JustinDefeat
+	msgbox MtEmber_Summit_Text_JustinPostBattle, MSGBOX_AUTOCLOSE
 	end
